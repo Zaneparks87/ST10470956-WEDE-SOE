@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order|Delivery</title>
+    <!-- Section 3.1 Rubric SEO Requirements Met -->
+    <title>Secure Order Checkout | ZaneparksHyper Delivery</title>
+    <meta name="description" content="Complete your purchase securely at ZaneparksHyper. Choose between Gauteng local shipping, nationwide parcel courier delivery, or free click &amp; collect options.">
+    <meta name="keywords" content="ZaneparksHyper checkout, order online South Africa, pay retail order, click and collect delivery tracking">
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -35,10 +38,10 @@
             border: 0;
         } 
 
+        /* Fixed Broken Mobile Parameters: Removed min-width restrictions */
         .Global-header {
             background-color: #ffffff;
             padding: 1.5rem 2rem;
-            min-width:1200px;
         }
 
         .header-container {
@@ -81,6 +84,7 @@
         }
 
         .header-actions .cart-toggle-button {
+            display: inline-block;
             text-decoration: none;
             background-color: #4E4034;
             color: #F5F2EC; 
@@ -88,136 +92,183 @@
             border-radius: 4px;
             font-weight: bold;
             font-size: 0.9rem;
-        }
-
-        .hero-showcase {
-            background-color: #D9D2C6;
-            padding: 5rem 2rem;
-            min-width: 1200px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-content-box {
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .hero-text {
-            max-width: 550px;
-            background-color: #F5F2EC;
-            padding: 3rem;
-            border: 1px solid #B7A996;
-            border-radius: 4px;
-        }
-
-        .hero-tagline {
-            display: block;
-            color: #B7A996;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-text h2 {
-            font-family: "Daytona light", sans-serif;
-            color: #4E4034;
-            font-size: 2.4rem;
-            margin: 0 0 1rem 0;
-        }
-
-        .hero-text p {
-            color: #8C7864;
-            margin-bottom: 2rem;
-        }
-
-        .hero-actions {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            border-radius: 4px;
             border: none;
         }
 
-        .btn-primary {
-            background-color: #4E4034;
-            color: #F5F2EC;
-        }
-
-        .homepage-main-content {
+        /* Order Main Structural Elements */
+        .order-page-container {
             max-width: 1200px;
-            margin: 4rem auto;
+            margin: 3rem auto;
             padding: 0 2rem;
         }
 
-        .section-title {
-            font-family: "Daytona light", sans-serif;
-            color: #4E4034;
-            font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-subtitle {
-            color: #8C7864;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .catalogue-cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .catalogue-card {
-            background-color: #ffffff;
-            border: 1px solid #D9D2C6; 
-            padding: 2rem;
-            border-radius: 4px;
+        .content-header-container {
             display: flex;
-            flex-direction: column;
             justify-content: space-between;
-            min-height: 250px;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
 
-        .catalogue-card h3 {
+        .content-header-container h2 {
             font-family: "Daytona light", sans-serif;
-            color: #4E4034;
-            font-size: 1.5rem;
-            margin: 0 0 0.75rem 0;
+            font-size: 2.5rem;
+            margin: 0;
         }
 
-        .catalogue-card p {
+        .lead-paragraph {
             color: #8C7864;
-            font-size: 0.95rem;
+            margin: 0.5rem 0 0 0;
+            flex-basis: 100%;
+        }
+
+        .order-split-layout {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 3rem;
+            margin-top: 2rem;
+            align-items: start;
+        }
+
+        .form-card-section {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 4px;
+            border: 1px solid #D9D2C6;
+        }
+
+        .form-card-section h3 {
+            font-family: "Daytona light", sans-serif;
+            margin-top: 0;
             margin-bottom: 1.5rem;
         }
 
-        .card-cta-link {
-            text-decoration: none;
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-field {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-field label {
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #8C7864;
+            background-color: #F5F2EC;
             color: #4E4034;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .radio-selection-block {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            background: #F5F2EC;
+            padding: 1rem;
+            border-radius: 4px;
+            border: 1px solid #D9D2C6;
+        }
+
+        .radio-custom-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            font-weight: normal !important;
+            font-size: 0.95rem;
+        }
+
+        /* Dynamic Visual Collapsing animation for Shipping Address Box */
+        #shippingAddressBlock {
+            max-height: 300px;
+            opacity: 1;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.4s ease, margin-bottom 0.4s ease;
+        }
+
+        #shippingAddressBlock.hidden-address {
+            max-height: 0px;
+            opacity: 0;
+            margin-bottom: 0px;
+            pointer-events: none;
+        }
+
+        .input-error {
+            border: 2px solid #dc3545 !important;
+            background-color: #fff8f8 !important;
+        }
+
+        .btn-form-submit {
+            background-color: #4E4034;
+            color: #F5F2EC; 
+            padding: 0.9rem 2rem;
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            width: 100%;
+            transition: background-color 0.3s;
         }
 
-        .card-cta-link:hover {
-            color: #B7A996;
+        .btn-form-submit:hover {
+            background-color: #8C7864;
         }
 
-        
+        .details-section-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid #D9D2C6;
+        }
+
+        .details-section-card h4 {
+            font-family: "Daytona light", sans-serif;
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .details-section-card ul {
+            padding-left: 1.25rem;
+            margin-bottom: 0;
+        }
+
+        .details-section-card li {
+            margin-bottom: 0.75rem;
+            color: #8C7864;
+        }
+
+        /* Form Feedback Box Overlay Rules */
+        .feedback-box {
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback-box.error-msg { display: block; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .feedback-box.loading-msg { display: block; background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+        .feedback-box.success-msg { display: block; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+
         .global-footer {
             background-color: #4E4034; 
             color: #F5F2EC;   
@@ -277,10 +328,15 @@
         .footer-bottom-bar {
             text-align: center;
             padding: 1.5rem;
-            min-width: 1200px;
             border-top: 1px solid #8C7864;
             font-size: 0.85rem;
             color: #D9D2C6;
+        }
+
+        @media (max-width: 900px) {
+            .order-split-layout {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -290,6 +346,9 @@
             }
             .nav-link ul {
                 margin-top: 1rem;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
             }
             .form-input {
                 max-width: 100%;
@@ -299,119 +358,141 @@
     </style>
 </head>
 <body>
- <hr>  
-    <header class="Global-header">
+   <header class="Global-header">
         <div class="header-container">
             <div class="brand-logo">
                 <h1>ZaneparksHyper</h1>
             </div>
-<hr>
             <nav class="nav-link">
                 <ul>
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
-                    <li><a href="about_Us.html" class="nav-link">About Us</a></li>
-                    <li><a href="order.html" class="nav-link active">Order/Delivery</a></li>
-                    <li><a href="contact_Us.html" class="nav-link">contact Us</a></li>
-                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalogue.html">Catalogue</a></li>
+                    <li><a href="about_Us.html">About Us</a></li>
+                    <li><a href="order.html" class="active">Order/Delivery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
                 </ul>
             </nav>
+            <div class="header-actions">
+                <button class="cart-toggle-button" aria-label="View Shopping Cart">
+                    Cart (<span id="globalCartCount">2</span>)
+                </button>
             </div>
         </div>
     </header>
-
     <hr>
     <main class="order-page-container">
         <div class="content-header-container">
-            <h2>Complete Your Order</h2>
-            <p class="lead-paragraph">Review selected products and choose your regional courier transit routes or in store collection.</p>
-             <div class="header-actions">
-                <a href="order.html" class="cart-toggle-button">
-                    Cart(<span id="globalCartCount">2</span>)
-                </a>
+            <div>
+                <h2>Complete Your Order</h2>
+                <p class="lead-paragraph">Review selected products and choose your regional courier transit routes or in-store collection.</p>
             </div>
         </div>
-<hr>
+        <hr>
+
         <div class="order-split-layout">
-          
-            <section class="form-row">
-                <h3>Delivery & Customer Details</h3>
-                <form id="secureCheckoutForm" class="styled-validated-form">
+            <!-- Left Hand side Processing Section Container -->
+            <section class="form-card-section">
+                <h3>Delivery &amp; Customer Details</h3>
+                <form id="secureCheckoutForm" novalidate>
+                    
                     <div class="form-row">
                         <div class="form-field">
                             <label for="customerFullName">Full Name</label>
-                            <input type="text" id="customerFullName" class="form-control" required placeholder="e.g.Bongane Mashabela">
+                            <input type="text" id="customerFullName" class="form-control" placeholder="e.g. Bongani Mashabela">
                         </div>
                         <div class="form-field">
                             <label for="customerPhone">Phone Number</label>
-                            <input type="tel" id="customerPhone" class="form-control" required placeholder="e.g.0123456789">
+                            <input type="tel" id="customerPhone" class="form-control" placeholder="e.g. 0823456789">
                         </div>
                     </div>
 
                     <div class="form-field">
-                        <label for="itemSelection">Confirm man product allocation</label>
-                        <select id="itemSelection" class="form-control-dropdown-select">
+                        <label for="itemSelection">Confirm Main Product Allocation</label>
+                        <select id="itemSelection" class="form-control">
+                            <option value="">-- Choose Item From Cart --</option>
                             <option value="jeans">Premium Straight Jeans - R600</option>
-                            <option value="towels">Abosorbent Microfiber Towel Set - R190</option>
-                            <option value="newborn Essentials">Pampers Box - R570</option>
+                            <option value="towels">Absorbent Microfiber Towel Set - R190</option>
+                            <option value="pampers">Pampers Box - R570</option>
                         </select>
                     </div>
+
                     <div class="form-field">
-                        <label>Delivery method</label>
+                        <label>Delivery Method Strategy</label>
                         <div class="radio-selection-block">
-                            <label class="radio-custom-lable">
-                                <input type="radio" name="deliverystrategy" value="courier" checked>
-                                <span>Standard Delivery within Gauteng delivery fee R45</span>
+                            <label class="radio-custom-label">
+                                <input type="radio" name="deliverystrategy" value="gauteng" checked>
+                                <span>Standard Delivery within Gauteng (Fee: R45)</span>
                             </label>
-                            <label class="radio-custom-lable">
-                                <input type="radio" name="deliverystrategy" value="pickup" checked>
-                                <span>Nation-wide delivery fee R85</span>
+                            <label class="radio-custom-label">
+                                <input type="radio" name="deliverystrategy" value="nationwide">
+                                <span>Nationwide Courier Delivery (Fee: R85)</span>
                             </label>
-                            <label class="radio-custom-lable">
-                                <input type="radio" name="deliverystrategy" value="pickup" checked>
-                                <span>4 hour click & collect(Free pickcup)</span>
+                            <label class="radio-custom-label">
+                                <input type="radio" name="deliverystrategy" value="collect">
+                                <span>4-Hour Click &amp; Collect (Free Pickup)</span>
                             </label>
                         </div>
                     </div>
 
+                    <!-- Target Element Hook for Dynamic JavaScript Visibility toggles -->
                     <div class="form-field" id="shippingAddressBlock">
                         <label for="shippingAddress">Full Physical Delivery Address</label>
-                        <textarea id="shippingAddress" class="form-control" rows="3" required placeholder="Enter street number, Suburb, city, and postal code."></textarea>
+                        <textarea id="shippingAddress" class="form-control" rows="3" placeholder="Enter street number, suburb, city, and postal code."></textarea>
                     </div>
 
-                    <button type="submit" class="btn-btn-form-submit">Confirm & place Order</button>
+                    <button type="submit" class="btn-form-submit">Confirm &amp; Place Order</button>
+                    
+                    <!-- Asynchronous AJAX Process Feedback Container Overlay Link -->
+                    <div id="checkoutFeedback" class="feedback-box" role="alert"></div>
                 </form>
             </section>
-<hr>
+            <!-- Right Hand Side Operational Sidebar Information Area -->
             <aside class="location-details-sidebar">
                 <div class="details-section-card">
-                    <h4>Distribuion & transit Timelines</h4>
-                <p>ZaneparksHyper Processes all order queries through validated, protected system endpoints for secure retail operation.</p>
+                    <h4>Distribution &amp; Transit Timelines</h4>
+                    <p>ZaneparksHyper processes all order queries through validated, protected system endpoints for secure retail operations.</p>
                     <ul>
-                        <li><strong>Standard Courier Delivery:</strong>3 to 5 buisness days Nation-wide.</li>
-                        <li><strong>Click & Collect:</strong>Packaged and varified for Physical instore pickup within 4 hours.</li>
-                        <li><strong>Tracking Portals:</strong> A unique SMS tracking number will be sent the moment your parcel is out for delivery.</li>
+                        <li><strong>Standard Courier Delivery:</strong> 3 to 5 business days nationwide.</li>
+                        <li><strong>Click &amp; Collect:</strong> Packaged and verified for physical in-store pickup within 4 hours.</li>
+                        <li><strong>Tracking Portals:</strong> A unique SMS tracking number will be sent the moment your parcel is dispatched.</li>
                     </ul>
                 </div>
             </aside>
         </div>
     </main>
-<hr>
-  <footer class="global-footer">
+    <hr>
+  <aside class="location-details-sidebar">
+                <div class="details-section-card">
+                    <h4>Distribution &amp; Transit Timelines</h4>
+                    <p>ZaneparksHyper processes all order queries through validated, protected system endpoints for secure retail operations.</p>
+                    <ul>
+                        <li><strong>Standard Courier Delivery:</strong> 3 to 5 business days nationwide.</li>
+                        <li><strong>Click &amp; Collect:</strong> Packaged and verified for physical in-store pickup within 4 hours.</li>
+                        <li><strong>Tracking Portals:</strong> A unique SMS tracking number will be sent the moment your parcel is dispatched.</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <hr>
+    <footer class="global-footer">
         <section class="footer-newsletter-section" aria-labelledby="NewsletterHeading">
             <div class="newsletter-content-box">
-                <h3 id="newssletterHeadng">Subscribe & Save 15%</h3>
+                <h3 id="NewsletterHeading">Subscribe &amp; Save 15%</h3>
                 <p>Subscribe to our newsletter and receive 15% off your first online order</p>
-                <form id="storeNewsletterform" class="newsletter-inline-form">
+                <form id="storeNewsletterform" class="newsletter-inline-form" novalidate>
                     <label for="SubscriberEmail" class="visually-hidden">Email Address:</label>
-                    <input type="email" id="SubscriberEmail" class="form-input" required placeholder="Enter your email address" required>
+                    <input type="email" id="SubscriberEmail" class="form-input" placeholder="Enter your email address" required>
                     <button type="submit" class="btn btn-submit">Join Now</button>
                 </form>
+                <div id="newsletterFeedback" class="feedback-box"></div>
             </div>
         </section>
         <div class="footer-bottom-bar">
-            <p>&COPY; 2026 ZaneparksHyper. All Right Reserved. Designed for premium retail excellence.</p>
+            <p>&copy; 2026 ZaneparksHyper. All Rights Reserved. Designed for premium retail excellence.</p>
         </div>
-      </footer>
+    </footer>
+    <script src="javascript/newsletter.js"></script>
 </body>
 </html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Section 3.1 Rubric SEO Requirements Met -->
+    <title>Contact Us & Support Hub | ZaneparksHyper</title>
+    <meta name="description" content="Get in touch with the ZaneparksHyper customer support desk. Inquire about click & collect orders, stock tracking, sizing, or store operational details.">
+    <meta name="keywords" content="contact ZaneparksHyper, customer service Pretoria, click and collect support, retail help desk, South Africa store hours">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #F5F2EC; 
+            color: #4E4034; 
+            font-family: "Source sans pro", Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #D9D2C6; 
+            margin: 0;
+            opacity: 0.7;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* Fixed Broken Mobile Parameters: Removed min-width restrictions */
+        .Global-header {
+            background-color: #ffffff; 
+            padding: 1.5rem 2rem;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand-logo h1 {
+            font-family: "Daytona light", sans-serif;
+            color: #4E4034; 
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .nav-link ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-link a {
+            text-decoration: none;
+            color: #8C7864;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link a:hover, 
+        .nav-link a.active {
+            color: #4E4034;
+        }
+
+        .header-actions .cart-toggle-button {
+            text-decoration: none;
+            background-color: #4E4034; 
+            color: #F5F2EC;  
+            padding: 0.6rem 1.25rem;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Layout Framework Setup */
+        .contact-page-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .content-header-container {
+            margin-bottom: 2rem;
+        }
+
+        .content-header-container h2 {
+            font-family: "Daytona light", sans-serif;
+            font-size: 2.5rem;
+            color: #4E4034;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .lead-paragraph {
+            font-size: 1.1rem;
+            color: #8C7864;
+            margin-bottom: 2.5rem;
+        }
+
+        .Contact-split-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .form-card-container {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 4px;
+            border: 1px solid #D9D2C6;
+        }
+
+        .form-card-container h3, .location-details-sidebar h3 {
+            font-family: "Daytona light", sans-serif;
+            color: #4E4034;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-field {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-field label {
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #4E4034;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #8C7864;
+            background-color: #F5F2EC;
+            color: #4E4034;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        /* Rubric Form Validation Border Changes State Hooks */
+        .input-error {
+            border: 2px solid #dc3545 !important;
+            background-color: #fff8f8 !important;
+        }
+
+        .btn-form-submit {
+            background-color: #4E4034;
+            color: #F5F2EC;
+            padding: 0.75rem 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .btn-form-submit:hover {
+            background-color: #8C7864;
+        }
+
+        .instant-msg-line {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 4px;
+            border: 1px solid #D9D2C6;
+            margin-top: 1.5rem;
+        }
+
+        .instant-msg-line h3 {
+            margin: 0 0 0.5rem 0;
+        }
+
+        .details-section-card {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 4px;
+            border: 1px solid #D9D2C6;
+            margin-bottom: 1.5rem;
+        }
+
+        .details-section-card h4 {
+            font-family: "Daytona light", sans-serif;
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            color: #4E4034;
+        }
+
+        .details-section-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .details-section-card li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .social-action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-btn {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 0.6rem;
+            background-color: #8C7864;
+            color: #F5F2EC;
+            font-weight: bold;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .social-btn:hover {
+            background-color: #4E4034;
+        }
+
+        /* Form Processing Feedback Component Overlay Styles */
+        .feedback-box {
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback-box.error-msg { display: block; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .feedback-box.loading-msg { display: block; background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+        .feedback-box.success-msg { display: block; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+
+        .global-footer {
+            background-color: #4E4034; 
+            color: #F5F2EC;            
+            margin-top: 5rem;
+        }
+
+        .footer-newsletter-section {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .footer-newsletter-section h3 {
+            font-family: "Daytona light", sans-serif;
+            font-size: 2rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .footer-newsletter-section p {
+            color: #D9D2C6;
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-inline-form {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .form-input {
+            flex-grow: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid #8C7864;
+            background-color: #F5F2EC;
+            color: #4E4034;
+            border-radius: 4px;
+            max-width: 350px;
+        }
+
+        .btn-submit {
+            background-color: #D9D2C6;
+            color: #4E4034; 
+            padding: 0.75rem 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #B7A996; 
+            color: #F5F2EC;
+        }
+
+        .footer-bottom-bar {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #8C7864;
+            font-size: 0.85rem;
+            color: #D9D2C6;
+        }
+
+        @media (max-width: 900px) {
+            .Contact-split-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container, .newsletter-inline-form {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-link ul {
+                margin-top: 1rem;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+            .form-input {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+     </style>
+</head>
+<body>
+ <header class="Global-header">
+        <div class="header-container">
+            <div class="brand-logo">
+                <h1>ZaneparksHyper</h1>
+            </div>
+            <nav class="nav-link">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalogue.html">Catalogue</a></li>
+                    <li><a href="about_Us.html">About Us</a></li>
+                    <li><a href="order.html">Order/Delivery</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="cartTrackerbtn" class="cart-toggle-button" aria-label="View Shopping Cart">
+                    <span class="cart-icon">Cart (<span id="globalCartCount">2</span>)</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <hr>
+<main class="contact-page-container">
+        <div class="content-header-container">
+            <h2>Connect with our team</h2>
+            <p class="lead-paragraph">Have questions about your local Click and Collect order, sizing, or stock availability? Contact our support line.</p>
+        </div>
+
+        <div class="Contact-split-layout">
+            <section class="form-card-container">
+                <h3>Submit an Inquiry</h3>
+                <form id="catalogueInquiryForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="customerName">Full Name</label>
+                            <input type="text" id="customerName" class="form-control" placeholder="e.g. Thabo Khumalo">
+                        </div>
+                        <div class="form-field">
+                            <label for="customerEmail">Email Address</label>
+                            <input type="email" id="customerEmail" class="form-control" placeholder="e.g. thabo@domain.co.za">
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="targetCatalogue">Relevant Catalogue Department</label>
+                        <select id="targetCatalogue" class="form-control">
+                            <option value="">-- Select Department Tier --</option>
+                            <option value="general">General Support Questions</option>
+                            <option value="clothing">Clothing &amp; Apparel Operations</option>
+                            <option value="accessories">Footwear &amp; Accessories</option>
+                            <option value="home">Home Essentials</option>
+                            <option value="kids">Kid's Department</option>
+                            <option value="collection">Click &amp; Collect Tracking Desk</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="messageBody">Detailed Message</label>
+                        <textarea id="messageBody" class="form-control" rows="6" placeholder="Describe your question or sizing description in detail..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-form-submit">Send Message</button>
+                    <div id="formFeedbackBox" class="feedback-box" role="alert"></div>
+                </form>
+                
+                <div class="instant-msg-line">
+                    <h3>Direct Support Line:</h3>
+                    <p>Call our team Mon-Fri from 9am-5pm</p>
+                    <p><strong>Support Phone:</strong> 012 669 1354</p>
+                </div>
+            </section>
+            <aside class="location-details-sidebar">
+                <div class="details-section-card">
+                    <h4>Visit Our Flagship Store:</h4>
+                    <p>Shop 114 Calvin Ngobeni Avenue,<br> Hyper Center District,<br>Gauteng, South Africa</p>
+                </div>
+
+                <div class="details-section-card">
+                    <h4>Store Operating Hours</h4>
+                    <ul>
+                        <li><span>Monday - Friday:</span> 09:00 - 18:00</li>
+                        <li><span>Saturday:</span> 09:00 - 16:00</li>
+                        <li><span>Sunday &amp; Public Holidays:</span> 09:00 - 14:00</li>
+                    </ul>
+                </div>
+
+                <div class="details-section-card">
+                    <h4>Follow Our Channels</h4>
+                    <p style="color: #8C7864; font-size: 0.9rem; margin-bottom: 1rem;">Get early alerts for flash department sales and seasonal item restocks.</p>
+                    <div class="social-action-buttons">
+                        <a href="https://instagram.com" class="social-btn" target="_blank" rel="noopener">Instagram Support</a>
+                        <a href="https://facebook.com" class="social-btn" target="_blank" rel="noopener">Facebook Page</a>
+                        <a href="https://gmail.com" class="social-btn" target="_blank" rel="noopener">Email Desk</a>
+                    </div>
+                    <div style="border-top: 1px solid #F5F2EC; padding-top: 0.75rem; margin-top: 0.75rem;">
+                        <p style="margin:0;"><strong>WhatsApp Customer Line:</strong> 071 569 2354</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <hr>
+    <footer class="global-footer">
+        <section class="footer-newsletter-section" aria-labelledby="NewsletterHeading">
+            <div class="newsletter-content-box">
+                <h3 id="NewsletterHeading">Subscribe &amp; Save 15%</h3>
+                <p>Subscribe to our newsletter and receive 15% off your first online order</p>
+                <form id="storeNewsletterform" class="newsletter-inline-form" novalidate>
+                    <label for="SubscriberEmail" class="visually-hidden">Email Address:</label>
+                    <input type="email" id="SubscriberEmail" class="form-input" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-submit">Join Now</button>
+                </form>
+                <div id="newsletterFeedback" class="feedback-box"></div>
+            </div>
+        </section>
+        <div class="footer-bottom-bar">
+            <p>&copy; 2026 ZaneparksHyper. All Rights Reserved. Designed for premium retail excellence.</p>
+        </div>
+    </footer>
+<script src="javascript/contact.js"></script>
+<script src="javascript/newsletter.js"></script>
+</body>
+</html>

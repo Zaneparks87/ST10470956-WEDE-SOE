@@ -21,7 +21,10 @@ body {
     color:#4E4034;
     line-height: 1.6;
 }
-
+.your element{
+    flex-grow: 1;
+    width: 100;
+}
 hr {
     border: 0;
     height: 1px;

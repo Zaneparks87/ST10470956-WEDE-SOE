@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry | ZaneparksHyper</title>
+    <meta name="description" content="Find answers to common questions about ZaneparksHyper orders, click & collect collections, clothing sizing, returns, and delivery tracking options.">
+    <meta name="keywords" content="ZaneparksHyper FAQ, retail help, customer assistance, click and collect South Africa, order support">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #F5F2EC; 
+            color: #4E4034; 
+            font-family: "Source sans pro", Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #D9D2C6; 
+            margin: 0;
+            opacity: 0.7;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        .Global-header {
+            background-color: #ffffff; 
+            padding: 1.5rem 2rem;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand-logo h1 {
+            font-family: "Daytona light", sans-serif;
+            color: #4E4034; 
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .nav-link ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-link a {
+            text-decoration: none;
+            color: #8C7864;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link a:hover, 
+        .nav-link a.active {
+            color: #4E4034;
+        }
+
+        .header-actions .cart-toggle-button {
+            text-decoration: none;
+            background-color: #4E4034; 
+            color: #F5F2EC;  
+            padding: 0.6rem 1.25rem;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* FAQ Content Layout Layout */
+        .faq-page-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .content-header-container {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .content-header-container h2 {
+            font-family: "Daytona light", sans-serif;
+            font-size: 2.5rem;
+            color: #4E4034;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .lead-paragraph {
+            font-size: 1.1rem;
+            color: #8C7864;
+        }
+
+        /* Interactive Accordion Styles Wrapper (Section 2.1 Components) */
+        .accordion-wrapper {
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .accordion-item {
+            background-color: #ffffff;
+            border: 1px solid #D9D2C6;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .accordion-trigger {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.25rem 1.5rem;
+            text-align: left;
+            font-family: "Daytona light", sans-serif;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #4E4034;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .accordion-trigger:hover {
+            background-color: #fdfcfb;
+        }
+
+        /* Accordion Vector Icon Rotation Transformation */
+        .accordion-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            color: #8C7864;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Animated Max-Height Drawer Reveal */
+        .accordion-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #ffffff;
+        }
+
+        .accordion-content {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: #8C7864;
+            font-size: 1rem;
+            margin: 0;
+            border-top: 1px solid #F5F2EC;
+            padding-top: 1rem;
+        }
+
+        .feedback-box {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback-box.success { display: block; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .feedback-box.error { display: block; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+        .global-footer {
+            background-color: #4E4034; 
+            color: #F5F2EC;            
+            margin-top: 5rem;
+        }
+
+        .footer-newsletter-section {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .footer-newsletter-section h3 {
+            font-family: "Daytona light", sans-serif;
+            font-size: 2rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .footer-newsletter-section p {
+            color: #D9D2C6;
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-inline-form {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .form-input {
+            flex-grow: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid #8C7864;
+            background-color: #F5F2EC;
+            color: #4E4034;
+            border-radius: 4px;
+            max-width: 350px;
+        }
+
+        .btn-submit {
+            background-color: #D9D2C6;
+            color: #4E4034; 
+            padding: 0.75rem 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #B7A996; 
+            color: #F5F2EC;
+        }
+
+        .footer-bottom-bar {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #8C7864;
+            font-size: 0.85rem;
+            color: #D9D2C6;
+        }
+
+        @media (max-width: 768px) {
+            .header-container, .newsletter-inline-form {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-link ul {
+                margin-top: 1rem;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+            .form-input {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+     </style>
+</head>
+<body>
+    <header class="Global-header">
+        <div class="header-container">
+            <div class="brand-logo">
+                <h1>ZaneparksHyper</h1>
+            </div>
+            <nav class="nav-link">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalogue.html">Catalogue</a></li>
+                    <li><a href="about_Us.html">About Us</a></li>
+                    <li><a href="order.html">Order/Delivery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="enquiry.html" class="active">Enquiry</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <hr>
+ <main class="faq-page-container">
+        <div class="content-header-container">
+            <h2>Frequently Asked Questions</h2>
+            <p class="lead-paragraph">Quick answers regarding inventory restocks, local Gauteng click &amp; collect options, and payment processing loops.</p>
+        </div>
+        <hr>
+
+        <div class="accordion-wrapper">
+            
+            <!-- Accordion Question 1 -->
+            <div class="accordion-item">
+                <h3>
+                    <button class="accordion-trigger" aria-expanded="false">
+                        <span>How does the local Click &amp; Collect counter operate?</span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
+                    </button>
+                </h3>
+                <div class="accordion-panel">
+                    <div class="accordion-content">
+                        <p>Once your checkout validation cycle clears, your items are packed directly at our flagship store. You will receive an SMS ticket alert within 4 hours confirming your collection bundle is ready at the desk.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Question 2 -->
+            <div class="accordion-item">
+                <h3>
+                    <button class="accordion-trigger" aria-expanded="false">
+                        <span>How do I determine sizing allocations accurately online?</span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
+                    </button>
+                </h3>
+                <div class="accordion-panel">
+                    <div class="accordion-content">
+                        <p>Every clothing article item card displays active department configurations. You can input targeted names into our real-time Size Availability Tracker inside the catalogue dashboard to evaluate specific item metrics before ordering.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Question 3 -->
+            <div class="accordion-item">
+                <h3>
+                    <button class="accordion-trigger" aria-expanded="false">
+                        <span>What is your retail exchange policy for home essentials?</span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
+                    </button>
+                </h3>
+                <div class="accordion-panel">
+                    <div class="accordion-content">
+                        <p>We provide a comprehensive 14-day warranty return standard. Items must remain unused in original outer packaging layers and match validation invoices generated at checkout endpoints.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Question 4 -->
+            <div class="accordion-item">
+                <h3>
+                    <button class="accordion-trigger" aria-expanded="false">
+                        <span>Are third-party payment gateways encrypted and secure?</span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
+                    </button>
+                </h3>
+                <div class="accordion-panel">
+                    <div class="accordion-content">
+                        <p>Yes. All asynchronous data stream loops utilize strict SSL validation mechanisms. We do not store sensitive payment credential entries directly on local network nodes.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <hr>
+    <footer class="global-footer">
+        <section class="footer-newsletter-section" aria-labelledby="NewsletterHeading">
+            <div class="newsletter-content-box">
+                <h3 id="NewsletterHeading">Subscribe &amp; Save 15%</h3>
+                <p>Subscribe to our newsletter and receive 15% off your first online order</p>
+                <form id="storeNewsletterform" class="newsletter-inline-form" novalidate>
+                    <label for="SubscriberEmail" class="visually-hidden">Email Address:</label>
+                    <input type="email" id="SubscriberEmail" class="form-input" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-submit">Join Now</button>
+                </form>
+                <div id="newsletterFeedback" class="feedback-box"></div>
+            </div>
+        </section>
+        <div class="footer-bottom-bar">
+            <p>&copy; 2026 ZaneparksHyper. All Rights Reserved. Designed for premium retail excellence.</p>
+        </div>
+    </footer>
+    <script src="javascript/form-processor.js"></script>
+    <script src="javascript/newsletter.js"></script>
+
+</body>
+</html>
