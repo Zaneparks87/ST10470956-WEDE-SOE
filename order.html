@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Section 3.1 Rubric SEO Requirements Met -->
+
     <title>Secure Order Checkout | ZaneparksHyper Delivery</title>
-    <meta name="description" content="Complete your purchase securely at ZaneparksHyper. Choose between Gauteng local shipping, nationwide parcel courier delivery, or free click &amp; collect options.">
-    <meta name="keywords" content="ZaneparksHyper checkout, order online South Africa, pay retail order, click and collect delivery tracking">
+    <meta name="description" content="Complete your ZaneparksHyper order. Choose Gauteng delivery, nationwide courier delivery, or click and collect.">
+    <meta name="keywords" content="ZaneparksHyper checkout, online shopping South Africa, retail delivery, click and collect">
+
     <link rel="stylesheet" href="styles.css">
+
     <style>
         body {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             background-color: #F5F2EC;
-            color: #4E4034;           
-            font-family: "Source sans pro", Arial, sans-serif;
+            color: #4E4034;
+            font-family: "Source Sans Pro", Arial, sans-serif;
             line-height: 1.6;
         }
-        
+
         hr {
             border: 0;
             height: 1px;
@@ -35,12 +37,12 @@
             margin: -1px;
             overflow: hidden;
             clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
             border: 0;
-        } 
+        }
 
-        /* Fixed Broken Mobile Parameters: Removed min-width restrictions */
         .Global-header {
-            background-color: #ffffff;
+            background-color: #FFFFFF;
             padding: 1.5rem 2rem;
         }
 
@@ -55,7 +57,7 @@
         }
 
         .brand-logo h1 {
-            font-family: "Daytona light", sans-serif;
+            font-family: "Daytona Light", sans-serif;
             color: #4E4034;
             font-size: 2rem;
             margin: 0;
@@ -64,6 +66,7 @@
         .nav-link ul {
             list-style: none;
             display: flex;
+            flex-wrap: wrap;
             gap: 1.5rem;
             padding: 0;
             margin: 0;
@@ -78,16 +81,15 @@
             transition: color 0.3s ease;
         }
 
-        .nav-link a:hover, 
+        .nav-link a:hover,
         .nav-link a.active {
             color: #4E4034;
         }
 
         .header-actions .cart-toggle-button {
             display: inline-block;
-            text-decoration: none;
             background-color: #4E4034;
-            color: #F5F2EC; 
+            color: #F5F2EC;
             padding: 0.6rem 1.25rem;
             border-radius: 4px;
             font-weight: bold;
@@ -95,7 +97,6 @@
             border: none;
         }
 
-        /* Order Main Structural Elements */
         .order-page-container {
             max-width: 1200px;
             margin: 3rem auto;
@@ -112,41 +113,41 @@
         }
 
         .content-header-container h2 {
-            font-family: "Daytona light", sans-serif;
+            font-family: "Daytona Light", sans-serif;
             font-size: 2.5rem;
             margin: 0;
         }
 
         .lead-paragraph {
             color: #8C7864;
-            margin: 0.5rem 0 0 0;
-            flex-basis: 100%;
+            margin: 0.5rem 0 0;
         }
 
         .order-split-layout {
             display: grid;
-            grid-template-columns: 1fr 380px;
+            grid-template-columns: minmax(0, 1fr) 380px;
             gap: 3rem;
             margin-top: 2rem;
             align-items: start;
         }
 
         .form-card-section {
-            background: #ffffff;
+            background: #FFFFFF;
             padding: 2.5rem;
             border-radius: 4px;
             border: 1px solid #D9D2C6;
+            min-width: 0;
         }
 
         .form-card-section h3 {
-            font-family: "Daytona light", sans-serif;
+            font-family: "Daytona Light", sans-serif;
             margin-top: 0;
             margin-bottom: 1.5rem;
         }
 
         .form-row {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 1.5rem;
             margin-bottom: 1rem;
         }
@@ -156,9 +157,11 @@
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+            min-width: 0;
         }
 
-        .form-field label {
+        .form-field label,
+        .delivery-legend {
             font-weight: bold;
             font-size: 0.9rem;
         }
@@ -175,6 +178,12 @@
             font-size: 1rem;
         }
 
+        .form-control:focus,
+        .form-input:focus {
+            outline: 2px solid #8C7864;
+            outline-offset: 2px;
+        }
+
         .radio-selection-block {
             display: flex;
             flex-direction: column;
@@ -185,38 +194,48 @@
             border: 1px solid #D9D2C6;
         }
 
+        .delivery-legend {
+            margin-bottom: 0.75rem;
+            padding: 0;
+        }
+
         .radio-custom-label {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 0.75rem;
             cursor: pointer;
-            font-weight: normal !important;
+            font-weight: normal;
             font-size: 0.95rem;
         }
 
-        /* Dynamic Visual Collapsing animation for Shipping Address Box */
+        .radio-custom-label input {
+            margin-top: 0.4rem;
+        }
+
         #shippingAddressBlock {
             max-height: 300px;
             opacity: 1;
             overflow: hidden;
-            transition: max-height 0.4s ease, opacity 0.4s ease, margin-bottom 0.4s ease;
+            transition: max-height 0.4s ease,
+                        opacity 0.4s ease,
+                        margin-bottom 0.4s ease;
         }
 
         #shippingAddressBlock.hidden-address {
-            max-height: 0px;
+            max-height: 0;
             opacity: 0;
-            margin-bottom: 0px;
+            margin-bottom: 0;
             pointer-events: none;
         }
 
         .input-error {
-            border: 2px solid #dc3545 !important;
-            background-color: #fff8f8 !important;
+            border: 2px solid #DC3545 !important;
+            background-color: #FFF8F8 !important;
         }
 
         .btn-form-submit {
             background-color: #4E4034;
-            color: #F5F2EC; 
+            color: #F5F2EC;
             padding: 0.9rem 2rem;
             font-weight: bold;
             text-transform: uppercase;
@@ -232,15 +251,22 @@
             background-color: #8C7864;
         }
 
+        .btn-form-submit:focus-visible,
+        .btn-submit:focus-visible,
+        .cart-toggle-button:focus-visible {
+            outline: 2px solid #8C7864;
+            outline-offset: 3px;
+        }
+
         .details-section-card {
-            background: #ffffff;
+            background: #FFFFFF;
             padding: 2rem;
             border-radius: 4px;
             border: 1px solid #D9D2C6;
         }
 
         .details-section-card h4 {
-            font-family: "Daytona light", sans-serif;
+            font-family: "Daytona Light", sans-serif;
             font-size: 1.3rem;
             margin-top: 0;
             margin-bottom: 1rem;
@@ -256,7 +282,6 @@
             color: #8C7864;
         }
 
-        /* Form Feedback Box Overlay Rules */
         .feedback-box {
             padding: 12px;
             margin-top: 15px;
@@ -265,13 +290,31 @@
             font-weight: bold;
             display: none;
         }
-        .feedback-box.error-msg { display: block; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
-        .feedback-box.loading-msg { display: block; background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
-        .feedback-box.success-msg { display: block; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+
+        .feedback-box.error-msg {
+            display: block;
+            background-color: #F8D7DA;
+            color: #721C24;
+            border: 1px solid #F5C6CB;
+        }
+
+        .feedback-box.loading-msg {
+            display: block;
+            background-color: #FFF3CD;
+            color: #856404;
+            border: 1px solid #FFEEBA;
+        }
+
+        .feedback-box.success-msg {
+            display: block;
+            background-color: #D4EDDA;
+            color: #155724;
+            border: 1px solid #C3E6CB;
+        }
 
         .global-footer {
-            background-color: #4E4034; 
-            color: #F5F2EC;   
+            background-color: #4E4034;
+            color: #F5F2EC;
             margin-top: 5rem;
         }
 
@@ -283,9 +326,9 @@
         }
 
         .footer-newsletter-section h3 {
-            font-family: "Daytona light", sans-serif;
+            font-family: "Daytona Light", sans-serif;
             font-size: 2rem;
-            margin: 0 0 0.5rem 0;
+            margin: 0 0 0.5rem;
         }
 
         .footer-newsletter-section p {
@@ -307,11 +350,12 @@
             color: #4E4034;
             border-radius: 4px;
             max-width: 350px;
+            min-width: 0;
         }
 
         .btn-submit {
             background-color: #D9D2C6;
-            color: #4E4034; 
+            color: #4E4034;
             padding: 0.75rem 1.5rem;
             font-weight: bold;
             text-transform: uppercase;
@@ -322,7 +366,6 @@
 
         .btn-submit:hover {
             background-color: #B7A996;
-            color: #F5F2EC;
         }
 
         .footer-bottom-bar {
@@ -340,159 +383,284 @@
         }
 
         @media (max-width: 768px) {
-            .header-container, .newsletter-inline-form {
-                flex-direction: column;
-                align-items: center;
+            .Global-header {
+                padding: 1.5rem 1rem;
             }
+
+            .header-container,
+            .newsletter-inline-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .brand-logo,
+            .nav-link,
+            .header-actions {
+                width: 100%;
+                text-align: center;
+            }
+
             .nav-link ul {
                 margin-top: 1rem;
                 flex-direction: column;
                 align-items: center;
                 gap: 0.75rem;
             }
+
+            .order-page-container {
+                padding: 0 1rem;
+            }
+
+            .content-header-container h2 {
+                font-size: 2rem;
+            }
+
+            .form-card-section {
+                padding: 1.25rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
             .form-input {
                 max-width: 100%;
                 width: 100%;
             }
+
+            .btn-submit {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
+
 <body>
-   <header class="Global-header">
+    <header class="Global-header">
         <div class="header-container">
             <div class="brand-logo">
                 <h1>ZaneparksHyper</h1>
             </div>
-            <nav class="nav-link">
+
+            <nav class="nav-link" aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="catalogue.html">Catalogue</a></li>
                     <li><a href="about_Us.html">About Us</a></li>
-                    <li><a href="order.html" class="active">Order/Delivery</a></li>
+                    <li><a href="order.html" class="active" aria-current="page">Order/Delivery</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                     <li><a href="enquiry.html">Enquiry</a></li>
                 </ul>
             </nav>
+
             <div class="header-actions">
-                <button class="cart-toggle-button" aria-label="View Shopping Cart">
-                    Cart (<span id="globalCartCount">2</span>)
+                <button type="button" class="cart-toggle-button" aria-label="View shopping cart">
+                    Cart (<span id="globalCartCount">0</span>)
                 </button>
             </div>
         </div>
     </header>
+
     <hr>
+
     <main class="order-page-container">
         <div class="content-header-container">
             <div>
                 <h2>Complete Your Order</h2>
-                <p class="lead-paragraph">Review selected products and choose your regional courier transit routes or in-store collection.</p>
+                <p class="lead-paragraph">
+                    Review your selected product and choose delivery or in-store collection.
+                </p>
             </div>
         </div>
+
         <hr>
 
         <div class="order-split-layout">
-            <!-- Left Hand side Processing Section Container -->
-            <section class="form-card-section">
-                <h3>Delivery &amp; Customer Details</h3>
+            <section class="form-card-section" aria-labelledby="checkoutHeading">
+                <h3 id="checkoutHeading">Delivery &amp; Customer Details</h3>
+
                 <form id="secureCheckoutForm" novalidate>
-                    
                     <div class="form-row">
                         <div class="form-field">
                             <label for="customerFullName">Full Name</label>
-                            <input type="text" id="customerFullName" class="form-control" placeholder="e.g. Bongani Mashabela">
+                            <input
+                                type="text"
+                                id="customerFullName"
+                                name="customerFullName"
+                                class="form-control"
+                                placeholder="e.g. Bongani Mashabela"
+                                autocomplete="name"
+                                minlength="2"
+                                required
+                            >
                         </div>
+
                         <div class="form-field">
                             <label for="customerPhone">Phone Number</label>
-                            <input type="tel" id="customerPhone" class="form-control" placeholder="e.g. 0823456789">
+                            <input
+                                type="tel"
+                                id="customerPhone"
+                                name="customerPhone"
+                                class="form-control"
+                                placeholder="e.g. 0823456789"
+                                autocomplete="tel"
+                                inputmode="tel"
+                                required
+                            >
                         </div>
                     </div>
 
                     <div class="form-field">
-                        <label for="itemSelection">Confirm Main Product Allocation</label>
-                        <select id="itemSelection" class="form-control">
-                            <option value="">-- Choose Item From Cart --</option>
+                        <label for="itemSelection">Select Your Product</label>
+                        <select
+                            id="itemSelection"
+                            name="itemSelection"
+                            class="form-control"
+                            required
+                        >
+                            <option value="">-- Choose a Product --</option>
                             <option value="jeans">Premium Straight Jeans - R600</option>
-                            <option value="towels">Absorbent Microfiber Towel Set - R190</option>
-                            <option value="pampers">Pampers Box - R570</option>
+                            <option value="tops">Kids' Tops - R150</option>
+                            <option value="sandals">Sandals - R160</option>
                         </select>
                     </div>
+<fieldset>
+    <legend>Choose a delivery method</legend>
 
-                    <div class="form-field">
-                        <label>Delivery Method Strategy</label>
-                        <div class="radio-selection-block">
-                            <label class="radio-custom-label">
-                                <input type="radio" name="deliverystrategy" value="gauteng" checked>
-                                <span>Standard Delivery within Gauteng (Fee: R45)</span>
-                            </label>
-                            <label class="radio-custom-label">
-                                <input type="radio" name="deliverystrategy" value="nationwide">
-                                <span>Nationwide Courier Delivery (Fee: R85)</span>
-                            </label>
-                            <label class="radio-custom-label">
-                                <input type="radio" name="deliverystrategy" value="collect">
-                                <span>4-Hour Click &amp; Collect (Free Pickup)</span>
-                            </label>
-                        </div>
-                    </div>
+    <label>
+        <input type="radio" name="deliveryMethod" value="gauteng" required>
+        Gauteng delivery — R60
+    </label>
+    <br><br>
 
-                    <!-- Target Element Hook for Dynamic JavaScript Visibility toggles -->
+    <label>
+        <input type="radio" name="deliveryMethod" value="nationwide">
+        Nationwide delivery — R100
+    </label>
+    <br><br>
+
+    <label>
+        <input type="radio" name="deliveryMethod" value="collect">
+        Click and collect — Free
+    </label>
+</fieldset>
+                    
+
                     <div class="form-field" id="shippingAddressBlock">
                         <label for="shippingAddress">Full Physical Delivery Address</label>
-                        <textarea id="shippingAddress" class="form-control" rows="3" placeholder="Enter street number, suburb, city, and postal code."></textarea>
+                        <textarea
+                            id="shippingAddress"
+                            name="shippingAddress"
+                            class="form-control"
+                            rows="3"
+                            placeholder="Enter street number, suburb, city, and postal code."
+                            autocomplete="street-address"
+                            required
+                        ></textarea>
                     </div>
 
-                    <button type="submit" class="btn-form-submit">Confirm &amp; Place Order</button>
-                    
-                    <!-- Asynchronous AJAX Process Feedback Container Overlay Link -->
-                    <div id="checkoutFeedback" class="feedback-box" role="alert"></div>
+                    <button type="submit" class="btn-form-submit">
+                        Confirm &amp; Place Order
+                    </button>
+
+                    <div
+                        id="checkoutFeedback"
+                        class="feedback-box"
+                        role="status"
+                        aria-live="polite"
+                        aria-atomic="true"
+                    ></div>
                 </form>
             </section>
-            <!-- Right Hand Side Operational Sidebar Information Area -->
-            <aside class="location-details-sidebar">
+
+            <aside class="location-details-sidebar" aria-label="Delivery information">
                 <div class="details-section-card">
                     <h4>Distribution &amp; Transit Timelines</h4>
-                    <p>ZaneparksHyper processes all order queries through validated, protected system endpoints for secure retail operations.</p>
+
+                    <p>
+                        Review the available delivery methods and estimated
+                        timelines before placing your order.
+                    </p>
+
                     <ul>
-                        <li><strong>Standard Courier Delivery:</strong> 3 to 5 business days nationwide.</li>
-                        <li><strong>Click &amp; Collect:</strong> Packaged and verified for physical in-store pickup within 4 hours.</li>
-                        <li><strong>Tracking Portals:</strong> A unique SMS tracking number will be sent the moment your parcel is dispatched.</li>
+                        <li>
+                            <strong>Standard Courier Delivery:</strong>
+                            Estimated 3 to 5 business days nationwide.
+                        </li>
+                        <li>
+                            <strong>Click &amp; Collect:</strong>
+                            The stated collection target is within 4 hours.
+                        </li>
+                        <li>
+                            <strong>Tracking:</strong>
+                            Tracking details can be provided once an order
+                            has been processed and dispatched.
+                        </li>
                     </ul>
                 </div>
             </aside>
         </div>
     </main>
+
     <hr>
-  <aside class="location-details-sidebar">
-                <div class="details-section-card">
-                    <h4>Distribution &amp; Transit Timelines</h4>
-                    <p>ZaneparksHyper processes all order queries through validated, protected system endpoints for secure retail operations.</p>
-                    <ul>
-                        <li><strong>Standard Courier Delivery:</strong> 3 to 5 business days nationwide.</li>
-                        <li><strong>Click &amp; Collect:</strong> Packaged and verified for physical in-store pickup within 4 hours.</li>
-                        <li><strong>Tracking Portals:</strong> A unique SMS tracking number will be sent the moment your parcel is dispatched.</li>
-                    </ul>
-                </div>
-            </aside>
-        </div>
-    </main>
-    <hr>
+
     <footer class="global-footer">
         <section class="footer-newsletter-section" aria-labelledby="NewsletterHeading">
             <div class="newsletter-content-box">
                 <h3 id="NewsletterHeading">Subscribe &amp; Save 15%</h3>
-                <p>Subscribe to our newsletter and receive 15% off your first online order</p>
+
+                <p>
+                    Subscribe to our newsletter and receive 15% off your
+                    first online order.
+                </p>
+
                 <form id="storeNewsletterform" class="newsletter-inline-form" novalidate>
-                    <label for="SubscriberEmail" class="visually-hidden">Email Address:</label>
-                    <input type="email" id="SubscriberEmail" class="form-input" placeholder="Enter your email address" required>
-                    <button type="submit" class="btn btn-submit">Join Now</button>
+                    <label for="SubscriberEmail" class="visually-hidden">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="SubscriberEmail"
+                        name="email"
+                        class="form-input"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <button type="submit" class="btn-submit">Join Now</button>
                 </form>
-                <div id="newsletterFeedback" class="feedback-box"></div>
+
+                <div
+                    id="newsletterFeedback"
+                    class="feedback-box"
+                    role="status"
+                    aria-live="polite"
+                    aria-atomic="true"
+                ></div>
             </div>
         </section>
+
         <div class="footer-bottom-bar">
-            <p>&copy; 2026 ZaneparksHyper. All Rights Reserved. Designed for premium retail excellence.</p>
+            <p>
+                &copy; 2026 ZaneparksHyper. All Rights Reserved.
+                Designed for premium retail excellence.
+            </p>
         </div>
     </footer>
-    <script src="javascript/newsletter.js"></script>
+    <script src="javascript/order.js" defer></script>
+<script src="javascript/newsletter.js" defer></script>
 </body>
 </html>

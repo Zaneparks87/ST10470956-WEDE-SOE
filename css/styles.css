@@ -315,3 +315,49 @@ hr {
         flex-direction: column;
     }
 }
+.store-map-section h2 {
+    margin-bottom: 10px;
+}
+
+#storeMap {
+    width: 100%;
+    min-height: 400px;
+    overflow: hidden;
+    border: 1px solid #D9D2C6;
+    border-radius: 8px;
+    background-color: #F5F2EC;
+}
+
+.store-location-section {
+    padding: 4rem 2rem;
+    background-color: #F5F2EC;
+}
+
+.store-location-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.store-map-wrapper {
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid #D9D2C6;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+.store-map-wrapper iframe {
+    display: block;
+    width: 100%;
+    min-height: 400px;
+}
+
+@media (max-width: 768px) {
+    .store-location-section {
+        padding: 2.5rem 1rem;
+    }
+
+    .store-map-wrapper iframe {
+        min-height: 300px;
+    }
+}

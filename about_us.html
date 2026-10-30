@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Section 3.1 Rubric SEO Requirements Met -->
-    <title>About Us | Our Story & Vision - ZaneparksHyper</title>
-    <meta name="description" content="Learn about ZaneparksHyper, our retail journey from 2022, our core mission, and our vision for premium fashion and home essentials across South Africa.">
-    <meta name="keywords" content="ZaneparksHyper story, boutique fashion retail, everyday clothing mission, quality home essentials, retail excellence">
-    <link rel="stylesheet" href="styles.css">
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Our Story &amp; Vision - ZaneparksHyper</title>
+<meta name="description" content="Learn about ZaneparksHyper, our retail journey, mission, and vision for clothing, fashion, and home essentials in South Africa.">
+<meta name="keywords" content="ZaneparksHyper story, clothing retail, everyday clothing, quality home essentials, retail">
+<meta name="author" content="ZaneparksHyper">
+<link rel="stylesheet" href="styles.css">
+<style>
+ * {
+     box-sizing: border-box;
+ }
+
         body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            background-color: #F5F2EC; 
+            background-color: #F5F2EC;
             color: #4E4034;
-            font-family: "Source sans pro", Arial, sans-serif;
+            font-family: "Source Sans Pro", Arial, sans-serif;
             line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
         hr {
@@ -35,12 +43,11 @@
             margin: -1px;
             overflow: hidden;
             clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
             border: 0;
         }
-
-        /* Fixed Broken Mobile Parameters: Removed min-width restrictions */
         .Global-header {
-            background-color: #ffffff;
+            background-color: #FFFFFF;
             padding: 1.5rem 2rem;
         }
 
@@ -55,7 +62,7 @@
         }
 
         .brand-logo h1 {
-            font-family: "Daytona light", sans-serif;
+            font-family: "Daytona Light", sans-serif;
             color: #4E4034;
             font-size: 2rem;
             margin: 0;
@@ -64,6 +71,7 @@
         .nav-link ul {
             list-style: none;
             display: flex;
+            flex-wrap: wrap;
             gap: 1.5rem;
             padding: 0;
             margin: 0;
@@ -78,15 +86,15 @@
             transition: color 0.3s ease;
         }
 
-        .nav-link a:hover, 
+        .nav-link a:hover,
+        .nav-link a:focus,
         .nav-link a.active {
             color: #4E4034;
         }
 
         .header-actions .cart-toggle-button {
-            text-decoration: none;
-            background-color: #4E4034; 
-            color: #F5F2EC;      
+            background-color: #4E4034;
+            color: #F5F2EC;
             padding: 0.6rem 1.25rem;
             border-radius: 4px;
             font-weight: bold;
@@ -95,7 +103,6 @@
             cursor: pointer;
         }
 
-        /* Clean Content Blocks Setup */
         .static-page-layout {
             max-width: 1200px;
             margin: 3rem auto;
@@ -108,10 +115,11 @@
         }
 
         .content-header-container h2 {
-            font-family: "Daytona light", sans-serif;
+            font-family: "Daytona Light", sans-serif;
             font-size: 2.5rem;
+            line-height: 1.2;
             color: #4E4034;
-            margin: 0 0 0.5rem 0;
+            margin: 0 0 0.5rem;
         }
 
         .lead-paragraph {
@@ -122,21 +130,22 @@
 
         .info-block-wrapper {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            gap: 2rem;
             margin: 3rem 0;
         }
 
         .narrative-section {
-            background-color: #ffffff;
+            background-color: #FFFFFF;
             padding: 2.5rem;
             border-radius: 4px;
             border: 1px solid #D9D2C6;
         }
 
         .narrative-section h3 {
-            font-family: "Daytona light", sans-serif;
+            font-family: "Daytona Light", sans-serif;
             font-size: 1.6rem;
+            line-height: 1.3;
             color: #4E4034;
             margin-top: 0;
             margin-bottom: 1rem;
@@ -147,13 +156,12 @@
             color: #8C7864;
         }
 
-        /* Review Grid Cards Elements */
         .review-display-section {
             margin-top: 4rem;
         }
 
-        .reviews-header h3 {
-            font-family: "Daytona light", sans-serif;
+        .reviews-header h2 {
+            font-family: "Daytona Light", sans-serif;
             font-size: 1.8rem;
             color: #4E4034;
             text-align: center;
@@ -162,21 +170,20 @@
 
         .reviews-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
             gap: 2rem;
         }
 
         .review-card {
-            background-color: #ffffff;
+            background-color: #FFFFFF;
             border: 1px solid #D9D2C6;
             padding: 2rem;
             border-radius: 4px;
         }
 
         .star-rating {
-            color: #B7A996;
+            color: #8C7864;
             font-weight: bold;
-            text-transform: uppercase;
             font-size: 0.85rem;
             margin-bottom: 0.5rem;
         }
@@ -193,10 +200,9 @@
             color: #8C7864;
             font-weight: bold;
         }
-
         .global-footer {
-            background-color: #4E4034; 
-            color: #F5F2EC; 
+            background-color: #4E4034;
+            color: #F5F2EC;
             margin-top: 5rem;
         }
 
@@ -207,10 +213,10 @@
             text-align: center;
         }
 
-        .footer-newsletter-section h3 {
-            font-family: "Daytona light", sans-serif;
+        .footer-newsletter-section h2 {
+            font-family: "Daytona Light", sans-serif;
             font-size: 2rem;
-            margin: 0 0 0.5rem 0;
+            margin: 0 0 0.5rem;
         }
 
         .footer-newsletter-section p {
@@ -220,18 +226,24 @@
 
         .newsletter-inline-form {
             display: flex;
+            flex-wrap: wrap;
             gap: 0.5rem;
             justify-content: center;
         }
 
         .form-input {
-            flex-grow: 1;
+            flex: 1 1 220px;
+            min-width: 0;
             padding: 0.75rem 1rem;
             border: 1px solid #8C7864;
             background-color: #F5F2EC;
-            color: #4E4034;            
+            color: #4E4034;
             border-radius: 4px;
-            max-width: 350px;
+        }
+
+        .form-input:focus {
+            outline: 2px solid #B7A996;
+            outline-offset: 2px;
         }
 
         .btn-submit {
@@ -245,9 +257,10 @@
             cursor: pointer;
         }
 
-        .btn-submit:hover {
+        .btn-submit:hover,
+        .btn-submit:focus {
             background-color: #B7A996;
-            color: #F5F2EC;
+            color: #4E4034;
         }
 
         .feedback-box {
@@ -256,10 +269,24 @@
             border-radius: 4px;
             font-size: 0.9rem;
             font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        .feedback-box:empty {
             display: none;
         }
-        .feedback-box.success { display: block; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
-        .feedback-box.error { display: block; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+        .feedback-box.success {
+            background: #D4EDDA;
+            color: #155724;
+            border: 1px solid #C3E6CB;
+        }
+
+        .feedback-box.error {
+            background: #F8D7DA;
+            color: #721C24;
+            border: 1px solid #F5C6CB;
+        }
 
         .footer-bottom-bar {
             text-align: center;
@@ -269,112 +296,149 @@
             color: #D9D2C6;
         }
 
+        .footer-bottom-bar p {
+            margin: 0;
+        }
+
         @media (max-width: 768px) {
-            .header-container, .newsletter-inline-form {
+            .Global-header {
+                padding: 1.25rem 1rem;
+            }
+
+            .header-container {
                 flex-direction: column;
                 align-items: center;
             }
+
+            .brand-logo h1 {
+                font-size: 1.75rem;
+                text-align: center;
+            }
+
             .nav-link ul {
                 margin-top: 1rem;
                 flex-direction: column;
                 align-items: center;
                 gap: 0.75rem;
             }
-            .form-input {
-                max-width: 100%;
+
+            .static-page-layout {
+                margin: 2rem auto;
+                padding: 0 1rem;
+            }
+
+            .content-header-container h2 {
+                font-size: 2rem;
+            }
+
+            .lead-paragraph {
+                font-size: 1.05rem;
+            }
+
+            .narrative-section {
+                padding: 1.5rem;
+            }
+
+            .footer-newsletter-section {
+                padding: 3rem 1rem;
+            }
+
+            .newsletter-inline-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .form-input,
+            .btn-submit {
                 width: 100%;
             }
         }
-     </style>
+</style>
 </head>
 <body>
 <header class="Global-header">
-        <div class="header-container">
-            <div class="brand-logo">
-                <h1>ZaneparksHyper</h1>
-            </div>
-            <nav class="nav-link">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="catalogue.html">Catalogue</a></li>
-                    <li><a href="about_Us.html" class="active">About Us</a></li>
-                    <li><a href="order.html">Order/Delivery</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="enquiry.html">Enquiry</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <button id="cartTrackerbtn" class="cart-toggle-button" aria-label="View Shopping Cart">
-                    <span class="cart-icon">Cart (<span id="globalCartCount">2</span>)</span>
-                </button>
-            </div>
-        </div>
-    </header>
-    <hr>
+ <div class="header-container">
+     <div class="brand-logo">
+        <h1>ZaneparksHyper</h1>
+     </div>
+<nav class="nav-link" aria-label="Main navigation">
+    <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="catalogue.html">Catalogue</a></li>
+    <li><a href="about_Us.html" class="active" aria-current="page">About Us</a></li>
+    <li><a href="order.html">Order/Delivery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="enquiry.html">Enquiry</a></li>
+    </ul>
+</nav>
+     <div class="header-actions">
+      <button type="button" id="cartTrackerbtn" class="cart-toggle-button" aria-label="View shopping cart">Cart (<span id="globalCartCount">0</span>)</button>
+     </div>
+ </div>
+ </header>
+<hr>
 <main class="static-page-layout">
-        <div class="content-header-container">
-            <h2>Our Journey &amp; Vision</h2>
-            <p class="lead-paragraph">Discover how we grew from a boutique retail idea into a premier fashion retail online store.</p>
-        </div>
-        <hr>
+    <header class="content-header-container">
+     <h1>Our Journey &amp; Vision</h1>
+     <p class="lead-paragraph"> Discover how we grew from a boutique retail idea into an online store for fashion and everyday essentials.</p>
+    </header>
+<hr>
+    <div class="info-block-wrapper">
+     <section class="narrative-section">
+        <h3>Brief History</h3>
+        <p> Founded in 2022 as a modest local lifestyle hyper store, ZaneparksHyper developed into a retail concept focused on quality everyday essentials. Our aim is to bring clothing and home essentials together in one convenient shopping experience.</p>
+    </section>
 
-        <div class="info-block-wrapper">
-            <section class="narrative-section">
-                <h3>Brief History</h3>
-                <p>Founded in 2022 as a modest local lifestyle hyper store, later developed into a comprehensive in-store fashion retail facility delivering quality everyday essentials. We launched to bridge the gap between quality clothing and homewear essentials, building a centralized online marketplace that makes checkout easy and fast delivery possible.</p>
-            </section>
-          
-            <section class="narrative-section">
-                <h3>Mission &amp; Vision</h3>
-                <p>Our mission is to offer an all-inclusive, single shopping experience that includes quality clothing, everyday items, and home appliances that improve modern everyday life.</p>
-            </section>
+    <section class="narrative-section">
+        <h3>Mission &amp; Vision</h3>
+        <p> Our mission is to offer a convenient shopping experience that includes quality clothing, everyday items, and home essentials that support modern everyday life.</p>
+    </section>
 
-            <section class="narrative-section">
-                <h3>Our Target Audience</h3>
-                <p>We purposefully serve busy families, active urban dwellers, and fashionistas between the ages of 20 and 70 who are looking for a single, comprehensive, reliable source for quality home and clothing products without browsing multiple distinct websites.</p>
-            </section>
+    <section class="narrative-section">
+        <h3>Our Target Audience</h3>
+        <p> We aim to serve busy families, active urban shoppers and people looking for a convenient place to explore clothing and home products without visiting multiple websites.</p>
+    </section>
+    </div>
+<hr>
+     <section class="review-display-section" aria-labelledby="reviewsHeading">
+        <div class="reviews-header">
+         <h2 id="reviewsHeading">What Our Customers Say</h2>
         </div>
-        <hr>
-    <section class="review-display-section" aria-labelledby="reviewsHeading">
-            <div class="reviews-header">
-                <h3 id="reviewsHeading">What Our Customers Say:</h3>
-            </div>
+        <div class="reviews-grid">
+            <article class="review-card">
+                <p class="star-rating" aria-label="5 out of 5 stars"> ★★★★★ 5 Stars</p>
+                <p class="review-text">"Being able to buy my denim jeans and kitchen towels in a single cart is an absolute lifesaver. The local click-and-collect pickup counter had everything packed and ready in four hours!"</p>
+                <span class="reviewer"> Masego P. - Verified Buyer</span>
+            </article>
             
-            <div class="reviews-grid">     
-                <div class="review-card">
-                    <div class="star-rating">⭐⭐⭐⭐⭐ 5 Stars</div>
-                    <p class="review-text">"Being able to buy my denim jeans and kitchen towels in a single cart is an absolute lifesaver. The local click &amp; collect pickup counter had everything packed and ready inside in 4 hours!"</p>
-                    <span class="reviewer">Masego P. - Verified Buyer</span>
-                </div>
-              
-                <div class="review-card">
-                    <div class="star-rating">⭐⭐⭐⭐⭐ 5 Stars</div>
-                    <p class="review-text">"The clothing material is very durable and holds up perfectly after multiple washes. The live size tracker tool online makes it simple to ensure things actually fit before buying."</p>
-                    <span class="reviewer">Siyabonga B. - Gauteng</span>
-                </div>
-            </div>
-        </section>
-    </main>
-    <hr>
-    <footer class="global-footer">
-        <section class="footer-newsletter-section" aria-labelledby="NewsletterHeading">
-            <div class="newsletter-content-box">
-                <h3 id="NewsletterHeading">Subscribe &amp; Save 15%</h3>
-                <p>Subscribe to our newsletter and receive 15% off your first online order</p>
-                
-                <form id="storeNewsletterform" class="newsletter-inline-form" novalidate>
-                    <label for="SubscriberEmail" class="visually-hidden">Email Address:</label>
-                    <input type="email" id="SubscriberEmail" class="form-input" placeholder="Enter your email address" required>
-                    <button type="submit" class="btn btn-submit">Join Now</button>
-                </form>
-                <!-- AJAX Feedback Container -->
-                <div id="newsletterFeedback" class="feedback-box"></div>
-            </div>
-        </section>
-        <div class="footer-bottom-bar">
-            <p>&copy; 2026 ZaneparksHyper. All Rights Reserved. Designed for premium retail excellence.</p>
+            <article class="review-card">
+                <p class="star-rating" aria-label="5 out of 5 stars">★★★★★ 5 Stars</p>
+                <p class="review-text">"The clothing material is very durable and holds up perfectly after multiple washes. The online size tracker makes it simple to check sizing before buying."</p>
+                <span class="reviewer">Siyabonga B. - Gauteng</span>
+            </article>
         </div>
-    </footer>
-    <script src="javascript/newsletter.js"></script>
+     </section>
+    </main>
+<hr>
+<footer class="global-footer"> 
+    <section class="footer-newsletter-section" aria-labelledby="newsletterHeading">
+    <div class="newsletter-content-box">
+            <h2 id="newsletterHeading">Subscribe &amp; Save 15%</h2>
+            <p> Subscribe to our newsletter and receive 15% off your first online order.</p>
+            
+        <form id="storeNewsletterform" class="newsletter-inline-form" novalidate>
+            <label for="SubscriberEmail" class="visually-hidden">Email address</label>
+            <input type="email" id="SubscriberEmail" name="email" class="form-input" placeholder="Enter your email address" autocomplete="email" required>
+            <button type="submit" class="btn-submit">Join Now </button>
+        </form>
+      <div id="newsletterFeedback" class="feedback-box" role="status" aria-live="polite"></div>
+    </div>
+    </section>
+    <div class="footer-bottom-bar">
+        <p> &copy; 2026 ZaneparksHyper. All Rights Reserved. Designed for premium retail excellence.</p>
+        <p> Send us an Email:<a href="mailto:zaneparkehyper@gmail.com" style="color: #F5F2EC;"> zaneparkehyper@gmail.com</a></p>
+    </div>
+</footer>
+<script src="javascript/newsletter.js" defer></script>
 </body>
 </html>

@@ -1,73 +1,106 @@
-   document.addEventListener("DOMContentLoaded", () => {
-            initContactFormPipeline();
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("catalogueInquiryForm");
+    const feedback = document.getElementById("formFeedbackBox");
+
+    if (!form || !feedback) {
+        return;
+    }
+
+    const nameInput = document.getElementById("customerName");
+    const emailInput = document.getElementById("customerEmail");
+    const departmentInput = document.getElementById("targetCatalogue");
+    const messageInput = document.getElementById("messageBody");
+
+    function showFeedback(message, type) {
+        feedback.textContent = message;
+        feedback.className = "feedback-box " + type;
+    }
+
+    function clearError(input) {
+        input.classList.remove("input-error");
+        input.removeAttribute("aria-invalid");
+    }
+
+    function markError(input) {
+        input.classList.add("input-error");
+        input.setAttribute("aria-invalid", "true");
+    }
+
+    const fields = [
+        nameInput,
+        emailInput,
+        departmentInput,
+        messageInput
+    ];
+
+    fields.forEach(function (field) {
+        field.addEventListener("input", function () {
+            clearError(field);
         });
 
-        function initContactFormPipeline() {
-            const form = document.getElementById("catalogueInquiryForm");
-            if (!form) return;
+        field.addEventListener("change", function () {
+            clearError(field);
+        });
+    });
 
-            form.addEventListener("submit", async function(event) {
-                event.preventDefault(); // Halt browser page refresh loop
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-                // Field Selector Mappings
-                const name = document.getElementById("customerName");
-                const email = document.getElementById("customerEmail");
-                const dept = document.getElementById("targetCatalogue");
-                const msg = document.getElementById("messageBody");
-                const feedback = document.getElementById("formFeedbackBox");
+        fields.forEach(clearError);
+        feedback.className = "feedback-box";
 
-                // Reset past error borders and hidden text layers
-                [name, email, dept, msg].forEach(field => field.classList.remove("input-error"));
-                feedback.className = "feedback-box";
-                feedback.innerText = "";
+        let valid = true;
 
-                // Strict Regex Evaluators
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const department = departmentInput.value;
+        const message = messageInput.value.trim();
 
-                // Validation Logical Suite Checks
-                if (name.value.trim().length < 3) {
-                    flagInvalidField(name, "❌ Name field must consist of at least 3 character characters.", feedback);
-                    return;
-                }
+        if (name.length < 2) {
+            markError(nameInput);
+            valid = false;
+        }
 
-                if (!emailRegex.test(email.value.trim())) {
-                    flagInvalidField(email, "❌ Please input a legitimate, conforming electronic email address setup.", feedback);
-                    return;
-                }
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-                if (dept.value === "") {
-                    flagInvalidField(dept, "❌ Please specify an active catalogue tracking department channel destination.", feedback);
-                    return;
-                }
+        if (!emailPattern.test(email)) {
+            markError(emailInput);
+            valid = false;
+        }
 
-                if (msg.value.trim().length < 10) {
-                    flagInvalidField(msg, "❌ Detail commentary text must extend beyond 10 character parameters.", feedback);
-                    return;
-                }
+        if (department === "") {
+            markError(departmentInput);
+            valid = false;
+        }
 
-                // ==========================================================================
-                // AJAX TRANSACTION INITIATION
-                // ==========================================================================
-                feedback.className = "feedback-box loading-msg";
-                feedback.innerText = "⏳ Connecting to ZaneparksHyper communication engine database stream via AJAX...";
+        if (message.length < 10) {
+            markError(messageInput);
+            valid = false;
+        }
 
-                try {
-                    // Simulating API network processing latency constraints
-                    await new Promise(resolve => setTimeout(resolve, 1400));
+        if (!valid) {
+            showFeedback(
+                "Please check your details. Enter your name, a valid email, select a department, and write a message of at least 10 characters.",
+                "error-msg"
+            );
 
-                    feedback.className = "feedback-box success-msg";
-                    feedback.innerText = "✅ Submission Dispatched! Asynchronous data packets processed by AJAX cleanly. System generated a support logging index reference.";
-                    form.reset();
-                } catch (err) {
-                    feedback.className = "feedback-box error-msg";
-                    feedback.innerText = "❌ Connection Fault: Failed transmission processing network data nodes.";
-                }
+            const firstInvalid = fields.find(function (field) {
+                return field.classList.contains("input-error");
             });
+
+            if (firstInvalid) {
+                firstInvalid.focus();
+            }
+
+            return;
         }
 
-        function flagInvalidField(fieldElement, errorMessageText, outputMessageBox) {
-            fieldElement.classList.add("input-error");
-            fieldElement.focus();
-            outputMessageBox.className = "feedback-box error-msg";
-            outputMessageBox.innerText = errorMessageText;
-        }
+        showFeedback(
+            "Validation successful! Your details are correct. Your message has NOT been sent because a message-processing service is not connected yet.",
+            "success-msg"
+        );
+
+        form.reset();
+        fields.forEach(clearError);
+    });
+});

@@ -1,37 +1,22 @@
-document.addEventListener("DOMContentLoaded", () => {
-            initNewsletterAJAX();
-        });
+document.addEventListener("DOMContentLoaded", function () {
+    const mapContainer = document.getElementById("storeMap");
 
-        function initNewsletterAJAX() {
-            const form = document.getElementById("storeNewsletterform");
-            const emailField = document.getElementById("SubscriberEmail");
-            const feedback = document.getElementById("newsletterFeedback");
+    if (!mapContainer) {
+        console.warn("Map container #storeMap was not found on this page.");
+        return;
+    }
 
-            form.addEventListener("submit", async function(e) {
-                e.preventDefault();
-                feedback.className = "feedback-box";
-                feedback.innerText = "";
+    const mapFrame = document.createElement("iframe");
 
-                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailPattern.test(emailField.value.trim())) {
-                    feedback.className = "feedback-box error-msg";
-                    feedback.innerText = "❌ Validation Error: Please provide a structurally legitimate email address.";
-                    return;
-                }
+    mapFrame.src = "https://www.google.com/maps?q=Johannesburg,+South+Africa&output=embed";
+    mapFrame.title = "Map of Johannesburg, South Africa";
+    mapFrame.width = "100%";
+    mapFrame.height = "400";
+    mapFrame.style.border = "0";
+    mapFrame.style.borderRadius = "8px";
+    mapFrame.loading = "lazy";
+    mapFrame.referrerPolicy = "no-referrer-when-downgrade";
+    mapFrame.allowFullscreen = true;
 
-                feedback.className = "feedback-box loading-msg";
-                feedback.innerText = "⏳ Directing AJAX processing pipeline data streams... Please hold.";
-
-                try {
-                    // Simulate Asynchronous network validation handling delay
-                    await new Promise(resolve => setTimeout(resolve, 1200));
-                    
-                    feedback.className = "feedback-box success-msg";
-                    feedback.innerText = "✅ Registration Complete! Your 15% discount voucher code has been dispatched asynchronously via AJAX.";
-                    form.reset();
-                } catch (err) {
-                    feedback.className = "feedback-box error-msg";
-                    feedback.innerText = "❌ Network Pipeline Failure updating registration blocks.";
-                }
-            });
-        }
+    mapContainer.replaceChildren(mapFrame);
+});

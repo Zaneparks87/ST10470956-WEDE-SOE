@@ -1,53 +1,50 @@
-document.addEventListener("DOMContentLoaded", () => {
-    
-    // Grab the newsletter form and its feedback message area
-    const newsletterForm = document.getElementById("newsletterForm");
+document.addEventListener("DOMContentLoaded", function () {
+    const newsletterForm = document.getElementById("storeNewsletterform");
+    const emailInput = document.getElementById("SubscriberEmail");
     const feedback = document.getElementById("newsletterFeedback");
 
-    // SAFETY CHECK: Only runs if the newsletter elements exist on the active page
-    if (newsletterForm && feedback) {
-        
-        newsletterForm.addEventListener("submit", async (e) => {
-            // Stops the page from refreshing to fulfill the required AJAX standard
-            e.preventDefault();
-            feedback.innerHTML = ""; // Reset current message states
-
-            const emailField = document.getElementById("newsletterEmail");
-            const emailValue = emailField ? emailField.value.trim() : "";
-
-            // 1. FAST REGEX EMAIL VALIDATION
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailValue || !emailPattern.test(emailValue)) {
-                feedback.innerHTML = `
-                    <div style="color: #9b1c1c; background-color: #fde8e8; padding: 8px 12px; border-radius: 4px; margin-top: 10px; font-size: 0.9rem;">
-                        ❌ Error: Please enter a valid email address profile.
-                    </div>`;
-                return; // Stop execution here
-            }
-
-            // 2. DYNAMIC AJAX PROCESSING (Matches your assignment's async code layout)
-            feedback.innerHTML = <div style="color: #2563eb; font-weight: bold; margin-top: 10px; font-size: 0.9rem;">Subscribing user...</div>;
-
-            try {
-                // Simulating a fast asynchronous server pipeline delay
-                await new Promise((resolve) => setTimeout(resolve, 1000));
-
-                // Success State Configuration
-                feedback.innerHTML = `
-                    <div style="color: #03543f; background-color: #def7ec; padding: 8px 12px; border-radius: 4px; margin-top: 10px; font-size: 0.9rem; font-weight: bold;">
-                        ✔️ Success! Welcome to our dynamic newsletter list.
-                    </div>`;
-                
-                // Instantly clear the email entry input
-                newsletterForm.reset();
-
-            } catch (err) {
-                // Fallback catch boundary block
-                feedback.innerHTML = `
-                    <div style="color: #e11d48; font-weight: bold; margin-top: 10px; font-size: 0.9rem;">
-                        ❌ System Error: Subscription transmission failed.
-                    </div>`;
-            }
-        });
+    if (!newsletterForm || !emailInput || !feedback) {
+        return;
     }
+
+    function showFeedback(message, type) {
+        feedback.textContent = message;
+        feedback.className = "feedback-box " + type;
+    }
+
+    function clearError() {
+        emailInput.classList.remove("input-error");
+        emailInput.removeAttribute("aria-invalid");
+    }
+
+    emailInput.addEventListener("input", function () {
+        clearError();
+        feedback.className = "feedback-box";
+        feedback.textContent = "";
+    });
+
+    newsletterForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        clearError();
+        const email = emailInput.value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            emailInput.classList.add("input-error");
+            emailInput.setAttribute("aria-invalid", "true");
+
+            showFeedback("Please enter a valid email address.","error-msg");
+
+            emailInput.focus();
+            return;
+        }
+
+        showFeedback(
+            "Your email address is valid! The newsletter subscription service is not connected yet, so you have not been subscribed.",
+            "success-msg"
+        );
+
+        newsletterForm.reset();
+        clearError();
+    });
 });

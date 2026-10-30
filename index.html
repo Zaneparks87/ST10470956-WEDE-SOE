@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Section 3.1 Rubric SEO Requirements Met -->
-    <title>ZaneparksHyper | Premium Retail &amp; Everyday Essentials</title>
-    <meta name="description" content="Welcome to ZaneparksHyper. Shop our premium, high-quality collections across Clothing, Footwear, Accessories, Kids, and Home Essentials with easy click &amp; collect options.">
-    <meta name="keywords" content="ZaneparksHyper home, online retail South Africa, hyper store clothing, buy home appliances, everyday apparel click and collect">
-    <link rel="stylesheet" href="styles.css">
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZaneparksHyper | Premium Retail &amp; Everyday Essentials</title>
+<meta name="description" content="Welcome to ZaneparksHyper. Shop our collections across clothing, footwear, accessories, kids, and home essentials.">
+<meta name="keywords" content="ZaneparksHyper, online retail South Africa, clothing, footwear, home essentials, everyday apparel">
+<meta name="author" content="ZaneparksHyper">
+<link rel="stylesheet" href="styles.css">
+<style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             background-color: #F5F2EC;
-            color: #4E4034;  
-            font-family: "Source sans pro", Arial, sans-serif;
+            color: #4E4034;
+            font-family: "Source Sans Pro", Arial, sans-serif;
             line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
         hr {
@@ -35,10 +43,10 @@
             margin: -1px;
             overflow: hidden;
             clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
             border: 0;
         }
 
-        /* Fixed Broken Mobile Parameters: Removed min-width restrictions */
         .Global-header {
             background-color: #ffffff;
             padding: 1.5rem 2rem;
@@ -55,7 +63,7 @@
         }
 
         .brand-logo h1 {
-            font-family: "Daytona light", sans-serif;
+            font-family: "Daytona Light", sans-serif;
             color: #4E4034;
             font-size: 2rem;
             margin: 0;
@@ -64,6 +72,7 @@
         .nav-link ul {
             list-style: none;
             display: flex;
+            flex-wrap: wrap;
             gap: 1.5rem;
             padding: 0;
             margin: 0;
@@ -78,7 +87,8 @@
             transition: color 0.3s ease;
         }
 
-        .nav-link a:hover, 
+        .nav-link a:hover,
+        .nav-link a:focus,
         .nav-link a.active {
             color: #4E4034;
         }
@@ -86,7 +96,7 @@
         .header-actions .cart-toggle-button {
             display: inline-block;
             text-decoration: none;
-            background-color: #4E4034; 
+            background-color: #4E4034;
             color: #F5F2EC;
             padding: 0.6rem 1.25rem;
             border-radius: 4px;
@@ -95,7 +105,6 @@
             border: none;
         }
 
-        /* Fixed Broken Mobile Parameters: Removed min-width restrictions */
         .hero-showcase {
             background-color: #D9D2C6;
             padding: 7rem 2rem;
@@ -118,7 +127,7 @@
 
         .hero-tagline {
             display: block;
-            color: #B7A996;
+            color: #8C7864;
             text-transform: uppercase;
             font-weight: bold;
             font-size: 0.85rem;
@@ -126,10 +135,11 @@
         }
 
         .hero-text h2 {
-            font-family: "Daytona light", sans-serif;
+            font-family: "Daytona Light", sans-serif;
             color: #4E4034;
             font-size: 2.4rem;
-            margin: 0 0 1rem 0;
+            line-height: 1.2;
+            margin: 0 0 1rem;
         }
 
         .hero-text p {
@@ -154,11 +164,17 @@
             border-radius: 4px;
             border: none;
             text-align: center;
+            cursor: pointer;
         }
 
         .btn-primary {
-            background-color: #4E4034; 
+            background-color: #4E4034;
             color: #F5F2EC;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: #8C7864;
         }
 
         .card-cta-link {
@@ -169,8 +185,9 @@
             font-size: 0.85rem;
         }
 
-        .card-cta-link:hover {
-            color: #B7A996; 
+        .card-cta-link:hover,
+        .card-cta-link:focus {
+            color: #8C7864;
         }
 
         .homepage-main-content {
@@ -180,8 +197,8 @@
         }
 
         .section-title {
-            font-family: "Daytona light", sans-serif;
-            color: #4E4034; 
+            font-family: "Daytona Light", sans-serif;
+            color: #4E4034;
             font-size: 2.2rem;
             text-align: center;
             margin-bottom: 0.5rem;
@@ -195,14 +212,14 @@
 
         .catalogue-cards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
             gap: 2rem;
             margin: 2rem 0;
         }
 
         .catalogue-card {
-            background-color: #ffffff; 
-            border: 1px solid #D9D2C6; 
+            background-color: #ffffff;
+            border: 1px solid #D9D2C6;
             padding: 2rem;
             border-radius: 4px;
             display: flex;
@@ -212,10 +229,10 @@
         }
 
         .catalogue-card h3 {
-            font-family: "Daytona light", sans-serif;
-            color: #4E4034; 
+            font-family: "Daytona Light", sans-serif;
+            color: #4E4034;
             font-size: 1.5rem;
-            margin: 0 0 0.75rem 0;
+            margin: 0 0 0.75rem;
         }
 
         .catalogue-card p {
@@ -225,7 +242,7 @@
         }
 
         .global-footer {
-            background-color: #4E4034; 
+            background-color: #4E4034;
             color: #F5F2EC;
             margin-top: 5rem;
         }
@@ -237,10 +254,10 @@
             text-align: center;
         }
 
-        .footer-newsletter-section h3 {
-            font-family: "Daytona light", sans-serif;
+        .footer-newsletter-section h2 {
+            font-family: "Daytona Light", sans-serif;
             font-size: 2rem;
-            margin: 0 0 0.5rem 0;
+            margin: 0 0 0.5rem;
         }
 
         .footer-newsletter-section p {
@@ -250,23 +267,24 @@
 
         .newsletter-inline-form {
             display: flex;
+            flex-wrap: wrap;
             gap: 0.5rem;
             justify-content: center;
         }
 
         .form-input {
-            flex-grow: 1;
+            flex: 1 1 220px;
+            min-width: 0;
             padding: 0.75rem 1rem;
-            border: 1px solid #8C7864; 
-            background-color: #F5F2EC; 
-            color: #4E4034;    
+            border: 1px solid #8C7864;
+            background-color: #F5F2EC;
+            color: #4E4034;
             border-radius: 4px;
-            max-width: 350px;
         }
 
         .btn-submit {
-            background-color: #D9D2C6; 
-            color: #4E4034;            
+            background-color: #D9D2C6;
+            color: #4E4034;
             padding: 0.75rem 1.5rem;
             font-weight: bold;
             text-transform: uppercase;
@@ -275,152 +293,242 @@
             cursor: pointer;
         }
 
-        .btn-submit:hover {
+        .btn-submit:hover,
+        .btn-submit:focus {
             background-color: #B7A996;
-            color: #F5F2EC;
+            color: #4E4034;
         }
 
-        /* Form Processing Feedback Component Overlay Styles */
         .feedback-box {
             padding: 12px;
             margin-top: 15px;
             border-radius: 4px;
             font-size: 0.95rem;
             font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        .feedback-box:empty {
             display: none;
         }
-        .feedback-box.error-msg { display: block; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
-        .feedback-box.loading-msg { display: block; background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
-        .feedback-box.success-msg { display: block; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+
+        .feedback-box.error-msg {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .feedback-box.loading-msg {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+
+        .feedback-box.success-msg {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
 
         .footer-bottom-bar {
             text-align: center;
             padding: 1.5rem;
-            border-top: 1px solid #8C7864; 
+            border-top: 1px solid #8C7864;
             font-size: 0.85rem;
             color: #D9D2C6;
         }
 
+        .footer-bottom-bar p {
+            margin: 0;
+        }
+
         @media (max-width: 768px) {
-            .header-container, .newsletter-inline-form {
+            .Global-header {
+                padding: 1.25rem 1rem;
+            }
+
+            .header-container {
                 flex-direction: column;
                 align-items: center;
             }
+
+            .brand-logo h1 {
+                font-size: 1.75rem;
+                text-align: center;
+            }
+
             .nav-link ul {
                 margin-top: 1rem;
                 flex-direction: column;
                 align-items: center;
                 gap: 0.75rem;
             }
+
+            .hero-showcase {
+                padding: 3rem 1rem;
+            }
+
+            .hero-text {
+                padding: 1.5rem;
+            }
+
+            .hero-text h2 {
+                font-size: 2rem;
+            }
+
+            .homepage-main-content {
+                margin: 2.5rem auto;
+                padding: 0 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .footer-newsletter-section {
+                padding: 3rem 1rem;
+            }
+
+            .newsletter-inline-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
             .form-input {
-                max-width: 100%;
+                width: 100%;
+            }
+
+            .btn-submit {
                 width: 100%;
             }
         }
     </style>
 </head>
 <body>
-<header class="Global-header">
+    <header class="Global-header">
         <div class="header-container">
             <div class="brand-logo">
                 <h1>ZaneparksHyper</h1>
             </div>
-            <nav class="nav-link">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="catalogue.html">Catalogue</a></li>
-                    <li><a href="about_Us.html">About Us</a></li>
-                    <li><a href="order.html">Order/Delivery</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="enquiry.html">Enquiry</a></li>
-                </ul>
-            </nav>
+        <nav class="nav-link" aria-label="Main navigation">
+            <ul>
+                 <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="about_Us.html">About Us</a></li>
+                <li><a href="order.html">Order/Delivery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+            </ul>
+        </nav>
+
             <div class="header-actions">
-                <a href="order.html" class="cart-toggle-button">
-                    Cart (<span id="globalCartCount">2</span>)
-                </a>
+                <a href="order.html" class="cart-toggle-button">  Cart (<span id="globalCartCount">0</span>) </a>
             </div>
         </div>
-    </header>
+  </header>
+
     <hr>
-    <section class="hero-showcase" aria-label="Seasonal Promotion">
-        <div class="hero-content-box">
-            <div class="hero-text">
+
+    <section class="hero-showcase" aria-labelledby="heroHeading">
+    <div class="hero-content-box">
+        <div class="hero-text">
                 <span class="hero-tagline">New Summer Collection</span>
-                <h2>Premium Everyday Essentials</h2>
-                <p>Explore high-quality collections across Clothing, Footwear, and Home items tailored for modern lifestyles.</p>
-                <div class="hero-actions">
-                    <a href="catalogue.html" class="btn btn-primary">Shop Full Department</a>
-                    <a href="catalogue.html?dept=clothing" class="card-cta-link">View Clothing Line</a>
-                </div>
+                <h2 id="heroHeading">Premium Everyday Essentials</h2>
+                <p> Explore high-quality collections across clothing, footwear and home items tailored for modern lifestyles.</p>
+            <div class="hero-actions">
+             <a href="catalogue.html" class="btn btn-primary">Shop Full Department</a>
+             <a href="catalogue.html?dept=clothing" class="card-cta-link">View Clothing Line</a>
             </div>
         </div>
-     </section>
-     <hr>
-     <main class="homepage-main-content">
+    </div>
+</section>
+
+    <hr>
+
+    <main class="homepage-main-content">
         <section class="catalogue-grid-section" aria-labelledby="catalogueGridHeading">
             <h2 id="catalogueGridHeading" class="section-title">Shop by Department</h2>
-            <p class="section-subtitle">Find everything your family needs across our specialized modern everyday categories.</p>
-            
+            <p class="section-subtitle"> Find everything your family needs across our everyday categories.</p>
             <div class="catalogue-cards-container">
-                <!-- Department 1 -->
+
                 <article class="catalogue-card">
                     <div class="card-body">
                         <h3>Clothing &amp; Apparel</h3>
-                        <p>Everyday tops, denim jeans, seasonal jackets, underwear, and athleisure wear.</p>
-                        <a href="catalogue.html?dept=clothing" class="card-cta-link">View Clothing Line</a>
+                        <p> Everyday tops, denim jeans, seasonal jackets, underwear, and athleisure wear.</p>
+                        <a href="catalogue.html?dept=clothing" class="card-cta-link">  View Clothing Line</a>
                     </div>
                 </article>
 
-                <!-- Department 2 -->
                 <article class="catalogue-card">
                     <div class="card-body">
                         <h3>Footwear &amp; Accessories</h3>
-                        <p>Durable shoes for all ages, quality handbags, wallets, and jewelry.</p>
-                        <a href="catalogue.html?dept=accessories" class="card-cta-link">Browse Accessories</a>
+                        <p> Durable shoes for all ages, quality handbags, wallets and jewellery.</p>
+                        <a href="catalogue.html?dept=accessories" class="card-cta-link"> Browse Accessories </a>
                     </div>
                 </article>
 
-                <!-- Department 3 -->
                 <article class="catalogue-card">
                     <div class="card-body">
                         <h3>Kids</h3>
-                        <p>Newborn essentials, kid's sleepwear, everyday tops and leggings, denim jeans, seasonal clothing, and underwear.</p>
-                        <a href="catalogue.html?dept=kids" class="card-cta-link">Explore Kids</a>
+                        <p>Newborn essentials, children's sleepwear, everyday tops, leggings, denim jeans, seasonal clothing, and underwear.
+                        </p>
+                        <a href="catalogue.html?dept=kids" class="card-cta-link"> Explore Kids</a>
                     </div>
                 </article>
 
-                <!-- Department 4 -->
                 <article class="catalogue-card">
                     <div class="card-body">
                         <h3>Home Essentials</h3>
-                        <p>Multi-department kitchenware, cozy blankets, pots, cutlery, glassware, and kitchen appliances.</p>
-                        <a href="catalogue.html?dept=home" class="card-cta-link">Explore Homewear</a>
+                        <p> Kitchenware, cosy blankets, pots, cutlery, glassware, and kitchen appliances.</p>
+                        <a href="catalogue.html?dept=home" class="card-cta-link"> Explore Home Essentials </a>
                     </div>
                 </article>
             </div>
         </section>
-      </main>
-      <hr>
-      <footer class="global-footer">
-        <section class="footer-newsletter-section" aria-labelledby="NewsletterHeading">
+    <section class="store-location-section" aria-labelledby="storeLocationHeading">
+        <div class="store-location-container">
+            <h2 id="storeLocationHeading" class="section-title">Find Us</h2>
+
+            <p class="section-subtitle"> Visit ZaneparksHyper at our store location.</p>
+            <div class="store-map-wrapper">
+                <iframe
+                    src="https://www.google.com/maps?q=Shop%20114%20Calvin%20Ngobeni%20Avenue%2C%20Hyper%20Center%20District%2C%20Gauteng%2C%20South%20Africa&output=embed"
+                    title="ZaneparksHyper store location"
+                    width="100%"
+                    height="400"
+                    style="border: 0;"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <hr>
+
+    <footer class="global-footer">
+        <section class="footer-newsletter-section" aria-labelledby="newsletterHeading">
             <div class="newsletter-content-box">
-                <h3 id="NewsletterHeading">Subscribe &amp; Save 15%</h3>
-                <p>Subscribe to our newsletter and receive 15% off your first online order</p>
+                <h2 id="newsletterHeading">Subscribe &amp; Save 15%</h2>
+
+                <p> Subscribe to our newsletter and receive 15% off your first online order. </p>
+
                 <form id="storeNewsletterform" class="newsletter-inline-form" novalidate>
-                    <label for="SubscriberEmail" class="visually-hidden">Email Address:</label>
-                    <input type="email" id="SubscriberEmail" class="form-input" placeholder="Enter your email address" required>
+                    <label for="SubscriberEmail" class="visually-hidden"> Email address </label>
+                    <input type="email" id="SubscriberEmail" name="email" class="form-input" placeholder="Enter your email address" autocomplete="email"  required >
                     <button type="submit" class="btn btn-submit">Join Now</button>
                 </form>
-                <!-- Critical UX Instant Feedback Response Target Area -->
-                <div id="newsletterFeedback" class="feedback-box" role="alert"></div>
+                <div id="newsletterFeedback" class="feedback-box" role="status" aria-live="polite"></div>
             </div>
         </section>
+
         <div class="footer-bottom-bar">
-            <p>&copy; 2026 ZaneparksHyper. All Rights Reserved. Designed for premium retail excellence.</p>
+            <p>&copy; 2026 ZaneparksHyper. All Rights Reserved.</p>
         </div>
-      </footer>
-    <script src="javascript/maps.js"></script>
-    <script src="javascript/newsletter.js"></script>
+ </footer>
+    <script src="javascript/maps.js" defer></script>
+    <script src="javascript/newsletter.js" defer></script>
 </body>
 </html>
