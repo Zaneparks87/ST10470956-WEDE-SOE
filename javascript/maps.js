@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     const mapContainer = document.getElementById("storeMap");
 
@@ -8,8 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const mapFrame = document.createElement("iframe");
 
-    mapFrame.src = "https://www.google.com/maps?q=Johannesburg,+South+Africa&output=embed";
-    mapFrame.title = "Map of Johannesburg, South Africa";
+    mapFrame.src =
+        "https://www.google.com/maps?q=Shop+114,+Bentel+Ave,+Jansen+Park,+Boksburg,+1462,+South+Africa&output=embed";
+
+    mapFrame.title = "Find ZaneparksHyper in Boksburg, South Africa";
     mapFrame.width = "100%";
     mapFrame.height = "400";
     mapFrame.style.border = "0";
@@ -17,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mapFrame.loading = "lazy";
     mapFrame.referrerPolicy = "no-referrer-when-downgrade";
     mapFrame.allowFullscreen = true;
+
 
     mapContainer.replaceChildren(mapFrame);
 });

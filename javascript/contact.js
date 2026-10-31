@@ -1,4 +1,7 @@
+
 document.addEventListener("DOMContentLoaded", function () {
+    "use strict";
+
     const form = document.getElementById("catalogueInquiryForm");
     const feedback = document.getElementById("formFeedbackBox");
 
@@ -11,21 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const departmentInput = document.getElementById("targetCatalogue");
     const messageInput = document.getElementById("messageBody");
 
-    function showFeedback(message, type) {
-        feedback.textContent = message;
-        feedback.className = "feedback-box " + type;
-    }
-
-    function clearError(input) {
-        input.classList.remove("input-error");
-        input.removeAttribute("aria-invalid");
-    }
-
-    function markError(input) {
-        input.classList.add("input-error");
-        input.setAttribute("aria-invalid", "true");
-    }
-
     const fields = [
         nameInput,
         emailInput,
@@ -33,6 +21,31 @@ document.addEventListener("DOMContentLoaded", function () {
         messageInput
     ];
 
+    if (fields.some(function (field) {
+        return !field;
+    })) {
+        console.error("Contact form error: One or more form fields are missing.");
+        return;
+    }
+
+    function showFeedback(message, type) {
+        feedback.textContent = message;
+        feedback.className = "feedback-box " + type;
+    }
+
+
+    function clearError(input) {
+        input.classList.remove("input-error");
+        input.removeAttribute("aria-invalid");
+    }
+
+    
+    function markError(input) {
+        input.classList.add("input-error");
+        input.setAttribute("aria-invalid", "true");
+    }
+
+    
     fields.forEach(function (field) {
         field.addEventListener("input", function () {
             clearError(field);
@@ -43,11 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
         fields.forEach(clearError);
+
         feedback.className = "feedback-box";
+        feedback.textContent = "";
 
         let valid = true;
 
@@ -56,11 +72,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const department = departmentInput.value;
         const message = messageInput.value.trim();
 
+        
         if (name.length < 2) {
             markError(nameInput);
             valid = false;
         }
 
+        
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailPattern.test(email)) {
@@ -68,11 +86,13 @@ document.addEventListener("DOMContentLoaded", function () {
             valid = false;
         }
 
+       
         if (department === "") {
             markError(departmentInput);
             valid = false;
         }
 
+        
         if (message.length < 10) {
             markError(messageInput);
             valid = false;
@@ -80,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!valid) {
             showFeedback(
-                "Please check your details. Enter your name, a valid email, select a department, and write a message of at least 10 characters.",
+                "Please check your details. Enter your name, a valid email address, select a department, and write a message of at least 10 characters.",
                 "error-msg"
             );
 
@@ -96,11 +116,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         showFeedback(
-            "Validation successful! Your details are correct. Your message has NOT been sent because a message-processing service is not connected yet.",
-            "success-msg"
+            "Your details are valid! However, your message has not been sent because the message-processing service is not connected yet.",
+            "loading-msg"
         );
-
-        form.reset();
-        fields.forEach(clearError);
     });
 });

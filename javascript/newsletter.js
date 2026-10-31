@@ -40,11 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         showFeedback(
-            "Your email address is valid! The newsletter subscription service is not connected yet, so you have not been subscribed.",
-            "success-msg"
-        );
-
-        newsletterForm.reset();
+    "Your email address is valid, but the newsletter service is not connected yet. You have not been subscribed.",
+    "loading-msg"
+);
         clearError();
     });
 });

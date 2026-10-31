@@ -35,3 +35,51 @@ on css i added min-width 1200px to increase the width of the background color on
 moved saved jpg images under assets, that where you will find all images.
 added a changelog file. at first i had everything inside the README.md file.
 Executed staging commands and verified Git commits to sync hardcoded Proposal 2 color scheme patches directly to the main production branch.
+
+october 2026
+sir had said my website is missing somethings  i fixed all my mistakes 
+All notable project updates should be recorded here. This log summarizes the changes made or discussed during development; verify the files in your current project folder before treating every entry as complete.
+
+— 2026-10-30
+Added
+- Enquiry page with required fields, topic selection, optional order reference, and question field.
+- FAQ accordion controls that open and close answers and switch the visible icon between + and −.
+- Client-side enquiry form validation and success/error feedback.
+- Documentation files for project setup and rubric tracking.
+Improved
+- Catalogue search and price sorting.
+- Order form validation and delivery-option handling.
+- Form labels, input hints, feedback areas, and responsive styling on updated pages.
+- Page metadata and internal navigation on updated HTML pages.
+Fixed
+- FAQ script now finds each answer panel within its corresponding .accordion-item, avoiding reliance on missing aria-controls attributes in older markup.
+- Corrected JavaScript path references where identified (use javascript/filename.js, not the misspelled javascipt/filename.js).
+- Identified product image paths and catalogue links as areas to verify.
+Known limitations / still to verify
+- Forms provide front-end validation only unless an actual backend or form service is connected. They do not automatically send email or store submissions.
+- The order page is a demonstration and does not process real payments or create a real order.
+- AJAX form submission must be implemented and tested if required by the rubric.
+- Confirm that the map is present, loads correctly, and points to the real store location; Johannesburg was only an example location.
+
+ created email address for the business(zaneparkehyper@gmail.com)
+ i commited on git
+ 31 
+ i rest my whole code changed how it looks 
+ added java 
+ fixed my css
+ check the html andjava tyhey function
+ REDERENCE LIST PIVTURES 
+ WOMEN DRESS- PINTREST FROM authsnez_
+ WOMEN STRIGHT JEANS -PINTRESRT FROM Straight Leg Jeans Pattern For Women
+margaretperng
+womwn clohing2 -pintrest fom
+men clothing -pintrest from
+men stright jean pintrest from
+men linen set -pintrest from
+everyday tops women -pintrest from
+quater jersy pintrset fromHuston.Hallway
+hustonhallway
+kifs tracksuits pintest from   Aya Hussein
+ayah0194
+watches pintrest from day and night watches
+everythi in assets is from pintrest

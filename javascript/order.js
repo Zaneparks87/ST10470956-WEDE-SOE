@@ -8,14 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const nameInput = document.getElementById("customerFullName");
-    const phoneInput = document.getElementById("customerPhone");
-    const productSelect = document.getElementById("itemSelection");
-    const addressBlock = document.getElementById("shippingAddressBlock");
-    const addressInput = document.getElementById("shippingAddress");
+const phoneInput = document.getElementById("customerPhone");
+const productSelect = document.getElementById("itemSelection");
+const addressBlock = document.getElementById("shippingAddressBlock");
+const addressInput = document.getElementById("shippingAddress");
 
-    const cartCount = document.getElementById("globalCartCount");
+if (!nameInput || !phoneInput || !productSelect ||
+    !addressBlock || !addressInput) {
+    console.error("Checkout form is missing required elements.");
+    return;
+}
 
-    
     const productPrices = {
         jeans: 600,
         tops: 150,
