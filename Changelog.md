@@ -38,8 +38,7 @@ Executed staging commands and verified Git commits to sync hardcoded Proposal 2 
 
 october 2026
 sir had said my website is missing somethings  i fixed all my mistakes 
-All notable project updates should be recorded here. This log summarizes the changes made or discussed during development; verify the files in your current project folder before treating every entry as complete.
-
+All notable project updates should be recorded here. 
 — 2026-10-30
 Added
 - Enquiry page with required fields, topic selection, optional order reference, and question field.
@@ -53,22 +52,21 @@ Improved
 - Page metadata and internal navigation on updated HTML pages.
 Fixed
 - FAQ script now finds each answer panel within its corresponding .accordion-item, avoiding reliance on missing aria-controls attributes in older markup.
-- Corrected JavaScript path references where identified (use javascript/filename.js, not the misspelled javascipt/filename.js).
+- Corrected JavaScript path references where identified using the correct javascript.
 - Identified product image paths and catalogue links as areas to verify.
-Known limitations / still to verify
 - Forms provide front-end validation only unless an actual backend or form service is connected. They do not automatically send email or store submissions.
 - The order page is a demonstration and does not process real payments or create a real order.
 - AJAX form submission must be implemented and tested if required by the rubric.
 - Confirm that the map is present, loads correctly, and points to the real store location; Johannesburg was only an example location.
-
+changed mt FAQ to enquiry
+changed my contact_us to Contact
  created email address for the business(zaneparkehyper@gmail.com)
  i commited on git
- 31 
- i rest my whole code changed how it looks 
- added java 
+ 31 -10 
+ Reditored my whole code changed how it looks 
  fixed my css
  check the html andjava tyhey function
- REDERENCE LIST PIVTURES 
+ REDERENCE LIST PICTURES 
  WOMEN DRESS- PINTREST FROM authsnez_
  WOMEN STRIGHT JEANS -PINTRESRT FROM Straight Leg Jeans Pattern For Women
 margaretperng
@@ -76,10 +74,22 @@ womwn clohing2 -pintrest fom
 men clothing -pintrest from
 men stright jean pintrest from
 men linen set -pintrest from
-everyday tops women -pintrest from
-quater jersy pintrset fromHuston.Hallway
+everyday tops women - pintrest from
+quater jersy pintrest from Huston.Hallway
 hustonhallway
-kifs tracksuits pintest from   Aya Hussein
-ayah0194
+kiDs tracksuits pintrest - ayah0194
 watches pintrest from day and night watches
-everythi in assets is from pintrest
+and the rest of the picture are from pintrest as well,just donr remember the owners 
+kids tops- pintrest
+Reference list
+2. Google (n.d.) *Introduction to robots.txt*. Google Search Central. Available at: https://developers.google.com/search/docs/crawling-indexing/robots/intro (Accessed: 1 November 2026).
+
+3. Google (n.d.) *Build and submit a sitemap*. Google Search Central. Available at: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap (Accessed: 1 November 2026).
+
+4. Mozilla (n.d.) *HTML: HyperText Markup Language*. MDN Web Docs. Available at: https://developer.mozilla.org/en-US/docs/Web/HTML (Accessed: 1 November 2026).
+
+5. Mozilla (n.d.) *CSS: Cascading Style Sheets*. MDN Web Docs. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS (Accessed: 1 November 2026).
+
+6. Mozilla (n.d.) *JavaScript*. MDN Web Docs. Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript (Accessed: 1 November 2026).
+
+7. World Wide Web Consortium (W3C) (n.d.) *Web Content Accessibility Guidelines (WCAG) 2.2*. Available at: https://www.w3.org/TR/WCAG22/ (Accessed: 1 November 2026).
